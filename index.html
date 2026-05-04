@@ -162,20 +162,6 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
 .note{max-width:480px;margin:0 auto;font-size:11px;color:var(--ink3);line-height:1.75;padding:12px 16px;border-left:3px solid var(--line);border-radius:0 8px 8px 0;background:rgba(255,255,255,0.5);}
 .note strong{color:var(--accent);}
 
-/* ── URL fetch card ── */
-.url-card{background:linear-gradient(135deg,rgba(37,99,176,0.06),rgba(37,99,176,0.02));border:1.5px solid rgba(37,99,176,0.2);border-radius:16px;padding:20px;max-width:480px;margin:0 auto 16px;}
-.url-title{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--blue);letter-spacing:0.1em;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.url-title::after{content:'';flex:1;height:1px;background:rgba(37,99,176,0.15);}
-.url-row{display:flex;gap:8px;align-items:center;}
-.url-row input{flex:1;border-color:rgba(37,99,176,0.25);font-size:12px;padding:10px 12px;}
-.url-row input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,176,0.1);}
-.fetch-btn{padding:10px 16px;background:var(--blue);color:white;border:none;border-radius:10px;font-family:'Noto Sans TC',sans-serif;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:opacity 0.15s;}
-.fetch-btn:hover{opacity:0.85;}.fetch-btn:disabled{opacity:0.45;cursor:not-allowed;}
-.fetch-status{margin-top:10px;font-size:12px;display:none;padding:10px 12px;border-radius:10px;line-height:1.6;}
-.fetch-status.loading{display:flex;align-items:center;gap:8px;color:var(--blue);background:rgba(37,99,176,0.06);}
-.fetch-status.success{display:block;color:var(--green);background:rgba(42,122,75,0.06);border:1px solid rgba(42,122,75,0.15);}
-.fetch-status.error{display:block;color:var(--accent);background:rgba(200,75,47,0.06);border:1px solid rgba(200,75,47,0.15);}
-.filled-tag{display:inline-block;font-size:10px;padding:3px 8px;border-radius:12px;background:rgba(42,122,75,0.1);color:var(--green);font-weight:600;margin:2px;}
 /* Season badge */
 .season-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;margin-top:6px;}
 .season-spring{background:rgba(180,120,200,0.12);color:#8840b0;}
@@ -210,16 +196,6 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
     🛒
     <div class="cart-badge" id="cartBadge">0</div>
   </div>
-</div>
-
-<!-- URL 讀取 -->
-<div class="url-card">
-  <div class="url-title">貼入商品網址（自動讀取）</div>
-  <div class="url-row">
-    <input type="text" id="productUrl" placeholder="https://www.grl.com/items/… 或 ZOZOTOWN、樂天、Amazon JP…">
-    <button class="fetch-btn" id="fetchBtn" onclick="fetchProduct()">讀取</button>
-  </div>
-  <div class="fetch-status" id="fetchStatus"></div>
 </div>
 
 <!-- 商品資訊 -->
@@ -856,6 +832,23 @@ async function runAI(){
   btn.disabled=false;btn.textContent='🔍 重新分析';
 }
 
+
+// ── Season detection ──────────────────────────────────
+function detectSeason(text){
+  const t=text||'';
+  if(/春夏|SS|spring.*summer/i.test(t))return{label:'春夏',cls:'season-spring',icon:'🌸'};
+  if(/秋冬|AW|FW|fall.*winter|autumn/i.test(t))return{label:'秋冬',cls:'season-fall',icon:'🍂'};
+  if(/夏|summer|涼感|UV|半袖|ノースリーブ|リネン|麻|シフォン/i.test(t))return{label:'夏季',cls:'season-summer',icon:'☀️'};
+  if(/冬|winter|ウール|wool|ニット|knit|裏起毛|ダウン|コート/i.test(t))return{label:'冬季',cls:'season-winter',icon:'❄️'};
+  if(/春|spring|花柄|floral/i.test(t))return{label:'春季',cls:'season-spring',icon:'🌸'};
+  if(/秋|fall|autumn|チェック|コーデュロイ/i.test(t))return{label:'秋季',cls:'season-fall',icon:'🍂'};
+  return null;
+}
+function showSeasonBadge(text){
+  const s=detectSeason(text||'');
+  const el=document.getElementById('seasonBadge');
+  el.innerHTML=s?`<div class="season-badge ${s.cls}">${s.icon} ${s.label}商品</div>`:'';
+}
 
 // ── Season detection ──────────────────────────────────
 function detectSeason(text){
