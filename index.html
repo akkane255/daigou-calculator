@@ -261,7 +261,7 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
   <div class="field-group">
     <div class="field">
       <label>商品名稱（貼日文名稱＋素材，按分析自動填入）</label>
-      <input type="text" id="productName" placeholder="例：花柄ワンピース ポリエステル100% 春夏" oninput="showSeasonBadge(this.value);showAnalyzeBtn()">
+      <input type="text" id="productName" placeholder="例：花柄ワンピース ポリエステル100% 春夏" oninput="showSeasonBadge(this.value);showAnalyzeBtn()" onpaste="setTimeout(function(){showSeasonBadge(document.getElementById('productName').value);showAnalyzeBtn();},50)" onchange="showSeasonBadge(this.value);showAnalyzeBtn()">
       <button class="analyze-btn" id="analyzeBtn" onclick="analyzeProduct()">🔍 分析商品（自動填入重量、類別、季節）</button>
       <div class="analyze-result" id="analyzeResult"></div>
       <div id="seasonBadge"></div>
@@ -271,7 +271,7 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
         <label>日幣含稅價（JPY）</label>
         <div class="ip" id="priceWrap">
           <span>¥</span>
-          <input type="number" id="priceJPY" placeholder="3699" oninput="updateTWD();autoEstimate()">
+          <input type="number" id="priceJPY" placeholder="3699" oninput="updateTWD();autoEstimate()" onpaste="setTimeout(function(){updateTWD();autoEstimate();},50)" onchange="updateTWD();autoEstimate()">
         </div>
       </div>
       <div class="field">
@@ -436,6 +436,8 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
 </div>
 
 <script>
+// ── Config（部署時填入你的 API Key）──────────────────
+var ANTHROPIC_KEY = 'YOUR_API_KEY_HERE';
 // ── State ─────────────────────────────────────────────
 var shippingMode = 'ems';
 var weightManual = false;
@@ -971,9 +973,13 @@ async function runAI() {
     '【代購上限價】最多能賣多少，超過買家就不買了。';
 
   try {
-    var response = await fetch('/api/claude', {
+    var response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': ANTHROPIC_KEY,
+        'anthropic-version': '2023-06-01'
+      },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 800,
@@ -1036,9 +1042,13 @@ async function analyzeProduct() {
     '}';
 
   try {
-    var response = await fetch('/api/claude', {
+    var response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': ANTHROPIC_KEY,
+        'anthropic-version': '2023-06-01'
+      },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 300,
