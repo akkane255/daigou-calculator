@@ -13,32 +13,46 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);font-family:'Noto Sans TC',sans-serif;color:var(--ink);min-height:100vh;padding:24px 16px 60px;
-  background-image:radial-gradient(circle at 10% 20%,rgba(200,75,47,0.04) 0%,transparent 40%),radial-gradient(circle at 90% 80%,rgba(232,160,32,0.06) 0%,transparent 40%);}
+  background-image:radial-gradient(circle at 10% 20%,rgba(200,75,47,0.04) 0%,transparent 40%),
+  radial-gradient(circle at 90% 80%,rgba(232,160,32,0.06) 0%,transparent 40%);}
 
-/* ── Header ── */
+/* Header */
 .top-bar{display:flex;align-items:center;justify-content:space-between;max-width:480px;margin:0 auto 20px;}
 .top-bar-title{text-align:center;flex:1;}
 .top-bar-title h1{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:700;letter-spacing:0.08em;}
 .top-bar-title p{font-size:11px;color:var(--ink3);margin-top:3px;}
 .flag-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;}
-.flag-row span{font-size:22px;}.arrow{font-size:16px;color:var(--accent);font-weight:bold;}
-.cart-btn{position:relative;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 2px 8px var(--shadow);flex-shrink:0;}
-.cart-badge{position:absolute;top:-6px;right:-6px;background:var(--accent);color:white;font-size:10px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;display:none;}
+.flag-row span{font-size:22px;}
+.arrow{font-size:16px;color:var(--accent);font-weight:bold;}
+.cart-btn{position:relative;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);
+  background:var(--card);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:20px;box-shadow:0 2px 8px var(--shadow);flex-shrink:0;border:none;}
+.cart-badge{position:absolute;top:-6px;right:-6px;background:var(--accent);color:white;font-size:10px;
+  font-weight:700;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;display:none;}
 
-/* ── Cards ── */
-.card{background:var(--card);border-radius:16px;border:1px solid var(--line);box-shadow:0 2px 16px var(--shadow);padding:20px;margin-bottom:16px;max-width:480px;margin-left:auto;margin-right:auto;}
-.section-title{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:0.12em;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+/* Cards */
+.card{background:var(--card);border-radius:16px;border:1px solid var(--line);
+  box-shadow:0 2px 16px var(--shadow);padding:20px;margin-bottom:16px;max-width:480px;margin-left:auto;margin-right:auto;}
+.section-title{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--accent);
+  letter-spacing:0.12em;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
 .section-title::after{content:'';flex:1;height:1px;background:var(--line);}
 .field-group{display:flex;flex-direction:column;gap:12px;}
 .field{display:flex;flex-direction:column;gap:4px;}
 .field label{font-size:11px;color:var(--ink3);letter-spacing:0.05em;font-weight:500;}
-.field-row{display:flex;gap:8px;}.field-row .field{flex:1;}
-input[type="number"],input[type="text"],select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-family:'DM Mono',monospace;font-size:14px;color:var(--ink);outline:none;transition:border-color 0.2s;-moz-appearance:textfield;}
+.field-row{display:flex;gap:8px;}
+.field-row .field{flex:1;}
+
+/* Inputs */
+input[type="number"],input[type="text"],select{
+  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;
+  background:var(--bg);font-family:'DM Mono',monospace;font-size:14px;color:var(--ink);
+  outline:none;transition:border-color 0.2s;-moz-appearance:textfield;}
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;}
 input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,75,47,0.08);}
 .ip{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
 .ip:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,75,47,0.08);}
-.ip span{padding:10px 10px 10px 12px;font-size:12px;color:var(--ink3);font-family:'DM Mono',monospace;white-space:nowrap;background:rgba(200,75,47,0.05);border-right:1px solid var(--line);}
+.ip span{padding:10px 10px 10px 12px;font-size:12px;color:var(--ink3);font-family:'DM Mono',monospace;
+  white-space:nowrap;background:rgba(200,75,47,0.05);border-right:1px solid var(--line);}
 .ip input{border:none;border-radius:0;box-shadow:none;background:transparent;flex:1;}
 .ip input:focus{box-shadow:none;}
 .ip.auto{border-color:rgba(42,122,75,0.45);background:rgba(42,122,75,0.03);}
@@ -49,118 +63,11 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
 .tag{display:inline-block;font-size:10px;padding:2px 6px;border-radius:4px;margin-left:4px;vertical-align:middle;}
 .tag-auto{background:rgba(42,122,75,0.1);color:var(--green);}
 .tag-info{background:rgba(200,75,47,0.08);color:var(--accent);}
-.toggle-btn{flex:1;padding:9px 6px;border-radius:8px;border:1.5px solid var(--line);background:transparent;font-family:'Noto Sans TC',sans-serif;font-size:12px;color:var(--ink3);cursor:pointer;transition:all 0.15s;text-align:center;}
-.toggle-btn.active{background:var(--accent);border-color:var(--accent);color:white;font-weight:600;}
-.pm-btn{flex:1;padding:9px 6px;border-radius:8px;border:1.5px solid var(--line);background:transparent;font-family:'Noto Sans TC',sans-serif;font-size:13px;color:var(--ink3);cursor:pointer;transition:all 0.15s;text-align:center;}
-.pm-btn.active{background:var(--accent);border-color:var(--accent);color:white;font-weight:600;}
-.linked-display{font-size:11px;color:var(--ink3);margin-top:4px;padding:6px 10px;background:rgba(200,75,47,0.05);border-radius:8px;border:1px solid rgba(200,75,47,0.12);}
-.linked-display span{color:var(--accent);font-family:'DM Mono',monospace;font-weight:600;}
-.twd-preview{font-family:'DM Mono',monospace;font-size:14px;font-weight:600;color:var(--accent);background:rgba(200,75,47,0.06);border:1px solid rgba(200,75,47,0.15);border-radius:10px;padding:10px 14px;text-align:center;min-height:40px;display:flex;align-items:center;justify-content:center;}
 
-/* ── Calc button ── */
-.calc-btn{width:100%;max-width:480px;display:block;margin:0 auto 12px;padding:15px;background:var(--accent);color:white;font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;letter-spacing:0.1em;border:none;border-radius:14px;cursor:pointer;box-shadow:0 4px 16px rgba(200,75,47,0.25);transition:transform 0.1s;}
-.calc-btn:active{transform:scale(0.98);}
-.add-cart-btn{width:100%;max-width:480px;display:none;margin:0 auto 16px;padding:13px;background:var(--green);color:white;font-family:'Noto Serif TC',serif;font-size:14px;font-weight:700;letter-spacing:0.08em;border:none;border-radius:14px;cursor:pointer;box-shadow:0 4px 16px rgba(42,122,75,0.2);transition:transform 0.1s;}
-.add-cart-btn:active{transform:scale(0.98);}
-
-/* ── Result card ── */
-.result-card{background:var(--ink);border-radius:16px;padding:20px;max-width:480px;margin:0 auto 12px;display:none;animation:su 0.3s ease;}
-.result-card.show{display:block;}
-@keyframes su{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-.rtitle{font-family:'Noto Serif TC',serif;font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:0.12em;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
-.rtitle::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
-.cr{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:6px;}
-.cr .lbl{color:rgba(255,255,255,0.52);}.cr .val{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.85);}
-.cr.sub .lbl{padding-left:12px;font-size:11px;color:rgba(255,255,255,0.3);}.cr.sub .val{font-size:11px;color:rgba(255,255,255,0.4);}
-.cr.total{border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;margin-top:4px;margin-bottom:0;}
-.cr.total .lbl{color:rgba(255,255,255,0.75);font-weight:600;}.cr.total .val{color:var(--accent2);font-size:14px;font-weight:600;}
-.tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px;}
-.tier{background:rgba(255,255,255,0.06);border-radius:10px;padding:12px 8px;text-align:center;border:1px solid rgba(255,255,255,0.08);cursor:pointer;transition:all 0.15s;}
-.tier:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);}
-.tier.selected{border-color:var(--accent2);background:rgba(232,160,32,0.2);}
-.tier.hi{background:rgba(232,160,32,0.15);border-color:rgba(232,160,32,0.3);}
-.tier.hi:hover{background:rgba(232,160,32,0.25);}
-.tier-lbl{font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;}
-.tier-price{font-family:'DM Mono',monospace;font-size:15px;color:white;font-weight:500;margin-bottom:2px;}
-.tier.hi .tier-price{color:var(--accent2);}
-.tier-sub{font-size:10px;color:rgba(255,255,255,0.3);}.tier.hi .tier-sub{color:rgba(232,160,32,0.65);}
-
-/* ── Cart overlay ── */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:100;display:none;animation:fadeIn 0.2s ease;}
-.overlay.show{display:block;}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-.cart-panel{position:fixed;top:0;right:0;bottom:0;width:min(100vw,480px);background:var(--bg);z-index:101;display:none;flex-direction:column;animation:slideIn 0.25s ease;}
-.cart-panel.show{display:flex;}
-@keyframes slideIn{from{transform:translateX(100%);}to{transform:translateX(0);}}
-.cart-header{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 16px;border-bottom:1px solid var(--line);background:var(--card);}
-.cart-header h2{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;}
-.cart-close{width:36px;height:36px;border-radius:10px;border:1.5px solid var(--line);background:transparent;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink3);}
-.cart-body{flex:1;overflow-y:auto;padding:16px;}
-.cart-empty{text-align:center;color:var(--ink3);font-size:13px;padding:40px 20px;}
-
-/* Cart item row */
-.cart-item{background:var(--card);border-radius:12px;border:1px solid var(--line);padding:14px;margin-bottom:10px;position:relative;}
-.ci-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
-.ci-name{font-size:13px;font-weight:600;color:var(--ink);flex:1;padding-right:8px;}
-.ci-del{width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink3);font-size:12px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
-.ci-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
-.ci-tag{font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(200,75,47,0.08);color:var(--accent);}
-.ci-tag.green{background:rgba(42,122,75,0.08);color:var(--green);}
-.ci-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;}
-.ci-row .k{color:var(--ink3);}.ci-row .v{font-family:'DM Mono',monospace;color:var(--ink);}
-.ci-row.hi .v{color:var(--accent2);font-weight:600;font-size:13px;}
-.custom-price-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
-.custom-price-row label{font-size:11px;color:var(--ink3);display:block;margin-bottom:4px;}
-.custom-price-wrap{display:flex;gap:8px;align-items:center;}
-.custom-price-wrap .ip{flex:1;}
-.use-suggested{font-size:11px;color:var(--accent);cursor:pointer;text-decoration:underline;white-space:nowrap;}
-
-/* Cart group header */
-.group-header{font-family:'Noto Serif TC',serif;font-size:12px;font-weight:700;color:var(--blue);letter-spacing:0.08em;margin:16px 0 8px;display:flex;align-items:center;gap:8px;}
-.group-header::after{content:'';flex:1;height:1px;background:rgba(37,99,176,0.2);}
-
-/* Cart footer */
-.cart-footer{padding:16px 16px 24px;border-top:1px solid var(--line);background:var(--card);overflow-y:auto;max-height:70vh;}
-.cart-tax-row{display:flex;gap:8px;margin-bottom:12px;}
-.cart-tax-row .toggle-btn{font-size:12px;padding:8px 6px;}
-.settle-btn{width:100%;padding:14px;background:var(--blue);color:white;font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;letter-spacing:0.08em;border:none;border-radius:12px;cursor:pointer;transition:opacity 0.15s;}
-.settle-btn:hover{opacity:0.88;}
-.settle-result{background:var(--ink);border-radius:14px;padding:16px;margin-top:12px;display:none;}
-.settle-result.show{display:block;}
-.sr-group{margin-bottom:14px;}
-.sr-gtitle{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.08em;margin-bottom:8px;font-family:'Noto Serif TC',serif;}
-.sr-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;padding:8px 10px;background:rgba(255,255,255,0.05);border-radius:8px;}
-.sr-item-name{font-size:12px;color:rgba(255,255,255,0.6);flex:1;}
-.sr-item-prices{text-align:right;}
-.sr-cost{font-size:10px;color:rgba(255,255,255,0.35);font-family:'DM Mono',monospace;}
-.sr-suggested{font-size:11px;color:rgba(232,160,32,0.9);font-family:'DM Mono',monospace;}
-.sr-custom{font-size:13px;color:white;font-family:'DM Mono',monospace;font-weight:600;}
-.sr-summary{border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;margin-top:8px;}
-.sr-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;}
-.sr-row .k{color:rgba(255,255,255,0.5);}.sr-row .v{font-family:'DM Mono',monospace;color:rgba(255,255,255,0.85);}
-.sr-row.profit .k{color:rgba(255,255,255,0.7);font-weight:600;}.sr-row.profit .v{color:#4ade80;font-size:15px;font-weight:700;}
-
-/* AI */
-.ai-card{background:var(--card);border-radius:16px;border:1px solid var(--line);box-shadow:0 2px 16px var(--shadow);padding:20px;max-width:480px;margin:0 auto 16px;}
-.ai-stitle{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--blue);letter-spacing:0.12em;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.ai-stitle::after{content:'';flex:1;height:1px;background:var(--line);}
-.ai-btn{width:100%;padding:12px;background:var(--blue);color:white;font-family:'Noto Serif TC',serif;font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:opacity 0.15s;}
-.ai-btn:hover{opacity:0.88;}.ai-btn:disabled{opacity:0.5;cursor:not-allowed;}
-.search-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
-.search-btn{padding:10px 8px;border-radius:10px;border:1.5px solid var(--line);background:transparent;font-family:'Noto Sans TC',sans-serif;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px;color:var(--ink);transition:all 0.15s;}
-.search-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(200,75,47,0.04);}
-.search-btn.shopee{border-color:rgba(238,77,45,0.3);color:#ee4d2d;}
-.search-btn.shopee:hover{background:rgba(238,77,45,0.05);border-color:#ee4d2d;}
-.search-btn.ruten{border-color:rgba(37,99,176,0.3);color:var(--blue);}
-.search-btn.ruten:hover{background:rgba(37,99,176,0.05);border-color:var(--blue);}
-.ai-result{margin-top:14px;display:none;}.ai-result.show{display:block;}
-.ai-dots{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink3);padding:8px 0;}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:bounce 1.2s infinite;}
-.dot:nth-child(2){animation-delay:0.2s;}.dot:nth-child(3){animation-delay:0.4s;}
-@keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4;}40%{transform:scale(1);opacity:1;}}
-.ai-output{font-size:13px;line-height:1.8;color:var(--ink);}
-.note{max-width:480px;margin:0 auto;font-size:11px;color:var(--ink3);line-height:1.75;padding:12px 16px;border-left:3px solid var(--line);border-radius:0 8px 8px 0;background:rgba(255,255,255,0.5);}
-.note strong{color:var(--accent);}
+/* TWD preview */
+.twd-preview{font-family:'DM Mono',monospace;font-size:14px;font-weight:600;color:var(--accent);
+  background:rgba(200,75,47,0.06);border:1px solid rgba(200,75,47,0.15);border-radius:10px;
+  padding:10px 14px;text-align:center;min-height:40px;display:flex;align-items:center;justify-content:center;}
 
 /* Season badge */
 .season-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;margin-top:6px;}
@@ -169,22 +76,172 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
 .season-fall{background:rgba(200,100,30,0.1);color:#b05a10;}
 .season-winter{background:rgba(80,120,180,0.1);color:#3060a0;}
 
+/* Buttons */
+.toggle-btn{flex:1;padding:9px 6px;border-radius:8px;border:1.5px solid var(--line);background:transparent;
+  font-family:'Noto Sans TC',sans-serif;font-size:12px;color:var(--ink3);cursor:pointer;transition:all 0.15s;text-align:center;}
+.toggle-btn.active{background:var(--accent);border-color:var(--accent);color:white;font-weight:600;}
+.ship-btn{flex:1;padding:9px 6px;border-radius:8px;border:1.5px solid var(--line);background:transparent;
+  font-family:'Noto Sans TC',sans-serif;font-size:12px;color:var(--ink3);cursor:pointer;transition:all 0.15s;text-align:center;}
+.ship-btn.active{background:var(--accent);border-color:var(--accent);color:white;font-weight:600;}
+.cart-tax-btn{flex:1;padding:9px 6px;border-radius:8px;border:1.5px solid var(--line);background:transparent;
+  font-family:'Noto Sans TC',sans-serif;font-size:12px;color:var(--ink3);cursor:pointer;transition:all 0.15s;text-align:center;}
+.cart-tax-btn.active{background:var(--accent);border-color:var(--accent);color:white;font-weight:600;}
+.pm-btn{flex:1;padding:9px 6px;border-radius:8px;border:1.5px solid var(--line);background:transparent;
+  font-family:'Noto Sans TC',sans-serif;font-size:13px;color:var(--ink3);cursor:pointer;transition:all 0.15s;text-align:center;}
+.pm-btn.active{background:var(--accent);border-color:var(--accent);color:white;font-weight:600;}
+.linked-display{font-size:11px;color:var(--ink3);margin-top:4px;padding:6px 10px;
+  background:rgba(200,75,47,0.05);border-radius:8px;border:1px solid rgba(200,75,47,0.12);}
+.linked-display span{color:var(--accent);font-family:'DM Mono',monospace;font-weight:600;}
 
-.reset-settle-btn{width:100%;padding:11px;background:transparent;color:var(--ink3);border:1.5px solid var(--line);font-family:'Noto Sans TC',sans-serif;font-size:13px;border-radius:12px;cursor:pointer;margin-top:8px;transition:all 0.15s;display:none;}
-.reset-settle-btn:hover{border-color:var(--accent);color:var(--accent);}
-.clear-cart-btn{width:100%;padding:11px;background:transparent;color:var(--accent);border:1.5px solid rgba(200,75,47,0.3);font-family:'Noto Sans TC',sans-serif;font-size:13px;border-radius:12px;cursor:pointer;margin-top:8px;transition:all 0.15s;display:none;}
-.clear-cart-btn:hover{background:rgba(200,75,47,0.06);}
+/* Calc + cart buttons */
+.calc-btn{width:100%;max-width:480px;display:block;margin:0 auto 12px;padding:15px;
+  background:var(--accent);color:white;font-family:'Noto Serif TC',serif;font-size:16px;
+  font-weight:700;letter-spacing:0.1em;border:none;border-radius:14px;cursor:pointer;
+  box-shadow:0 4px 16px rgba(200,75,47,0.25);transition:transform 0.1s;}
+.calc-btn:active{transform:scale(0.98);}
+.add-cart-btn{width:100%;max-width:480px;display:none;margin:0 auto 16px;padding:13px;
+  background:var(--green);color:white;font-family:'Noto Serif TC',serif;font-size:14px;
+  font-weight:700;letter-spacing:0.08em;border:none;border-radius:14px;cursor:pointer;
+  box-shadow:0 4px 16px rgba(42,122,75,0.2);transition:transform 0.1s;}
+.add-cart-btn:active{transform:scale(0.98);}
 
+/* Result card */
+.result-card{background:var(--ink);border-radius:16px;padding:20px;max-width:480px;
+  margin:0 auto 12px;display:none;animation:su 0.3s ease;}
+.result-card.show{display:block;}
+@keyframes su{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.rtitle{font-family:'Noto Serif TC',serif;font-size:12px;color:rgba(255,255,255,0.45);
+  letter-spacing:0.12em;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.rtitle::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
+.cr{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:6px;}
+.cr .lbl{color:rgba(255,255,255,0.52);}
+.cr .val{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.85);}
+.cr.sub .lbl{padding-left:12px;font-size:11px;color:rgba(255,255,255,0.3);}
+.cr.sub .val{font-size:11px;color:rgba(255,255,255,0.4);}
+.cr.total{border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;margin-top:4px;margin-bottom:0;}
+.cr.total .lbl{color:rgba(255,255,255,0.75);font-weight:600;}
+.cr.total .val{color:var(--accent2);font-size:14px;font-weight:600;}
 
+/* Tier cards */
+.tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px;}
+.tier{background:rgba(255,255,255,0.06);border-radius:10px;padding:12px 8px;text-align:center;
+  border:1px solid rgba(255,255,255,0.08);cursor:pointer;transition:all 0.15s;}
+.tier:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);}
+.tier.selected{border-color:var(--accent2);background:rgba(232,160,32,0.2);}
+.tier.hi{background:rgba(232,160,32,0.15);border-color:rgba(232,160,32,0.3);}
+.tier.hi:hover{background:rgba(232,160,32,0.25);}
+.tier-lbl{font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;}
+.tier-price{font-family:'DM Mono',monospace;font-size:15px;color:white;font-weight:500;margin-bottom:2px;}
+.tier.hi .tier-price{color:var(--accent2);}
+.tier.selected .tier-price{color:var(--accent2);}
+.tier-sub{font-size:10px;color:rgba(255,255,255,0.3);}
+.tier.hi .tier-sub{color:rgba(232,160,32,0.65);}
+
+/* Cart overlay */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:100;display:none;}
+.overlay.show{display:block;}
+.cart-panel{position:fixed;top:0;right:0;bottom:0;width:min(100vw,480px);background:var(--bg);
+  z-index:101;display:none;flex-direction:column;}
+.cart-panel.show{display:flex;}
+.cart-header{display:flex;align-items:center;justify-content:space-between;
+  padding:20px 20px 16px;border-bottom:1px solid var(--line);background:var(--card);}
+.cart-header h2{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;}
+.cart-close{width:36px;height:36px;border-radius:10px;border:1.5px solid var(--line);
+  background:transparent;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink3);}
+.cart-body{flex:1;overflow-y:auto;padding:16px;}
+.cart-empty{text-align:center;color:var(--ink3);font-size:13px;padding:40px 20px;}
+
+/* Cart items */
+.cart-item{background:var(--card);border-radius:12px;border:1px solid var(--line);padding:14px;margin-bottom:10px;}
+.ci-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+.ci-name{font-size:13px;font-weight:600;color:var(--ink);flex:1;padding-right:8px;}
+.ci-del{width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:transparent;
+  color:var(--ink3);font-size:12px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.ci-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.ci-tag{font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(200,75,47,0.08);color:var(--accent);}
+.ci-tag.green{background:rgba(42,122,75,0.08);color:var(--green);}
+.ci-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;}
+.ci-row .k{color:var(--ink3);}
+.ci-row .v{font-family:'DM Mono',monospace;color:var(--ink);}
+.ci-row.hi .v{color:var(--accent2);font-weight:600;font-size:13px;}
+.custom-price-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
+.custom-price-row label{font-size:11px;color:var(--ink3);display:block;margin-bottom:4px;}
+.custom-price-wrap{display:flex;gap:8px;align-items:center;}
+.custom-price-wrap .ip{flex:1;}
+.use-suggested{font-size:11px;color:var(--accent);cursor:pointer;text-decoration:underline;white-space:nowrap;}
+.group-header{font-family:'Noto Serif TC',serif;font-size:12px;font-weight:700;color:var(--blue);
+  letter-spacing:0.08em;margin:16px 0 8px;display:flex;align-items:center;gap:8px;}
+.group-header::after{content:'';flex:1;height:1px;background:rgba(37,99,176,0.2);}
+
+/* Cart footer */
+.cart-footer{padding:16px 16px 24px;border-top:1px solid var(--line);background:var(--card);overflow-y:auto;max-height:70vh;}
+.cart-tax-row{display:flex;gap:8px;margin-bottom:12px;}
+.settle-btn{width:100%;padding:14px;background:var(--blue);color:white;font-family:'Noto Serif TC',serif;
+  font-size:15px;font-weight:700;letter-spacing:0.08em;border:none;border-radius:12px;cursor:pointer;}
+.settle-result{background:var(--ink);border-radius:14px;padding:16px;margin-top:12px;display:none;}
+.settle-result.show{display:block;}
+.sr-group{margin-bottom:14px;}
+.sr-gtitle{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.08em;margin-bottom:8px;font-family:'Noto Serif TC',serif;}
+.sr-item{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;
+  padding:8px 10px;background:rgba(255,255,255,0.05);border-radius:8px;}
+.sr-item-name{font-size:12px;color:rgba(255,255,255,0.6);flex:1;padding-right:8px;}
+.sr-item-prices{text-align:right;flex-shrink:0;}
+.sr-cost{font-size:10px;color:rgba(255,255,255,0.35);font-family:'DM Mono',monospace;}
+.sr-suggested{font-size:11px;color:rgba(232,160,32,0.9);font-family:'DM Mono',monospace;}
+.sr-custom{font-size:13px;color:white;font-family:'DM Mono',monospace;font-weight:600;}
+.sr-summary{border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;margin-top:8px;}
+.sr-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;}
+.sr-row .k{color:rgba(255,255,255,0.5);}
+.sr-row .v{font-family:'DM Mono',monospace;color:rgba(255,255,255,0.85);}
+.sr-row.profit .k{color:rgba(255,255,255,0.7);font-weight:600;}
+.sr-row.profit .v{color:#4ade80;font-size:15px;font-weight:700;}
 .cost-diff{font-size:10px;padding:3px 7px;border-radius:6px;margin-top:3px;display:inline-block;}
-.cost-diff.saved{background:rgba(42,122,75,0.15);color:#4ade80;}
-.cost-diff.same{display:none;}
+.reset-settle-btn{width:100%;padding:11px;background:transparent;color:var(--ink3);border:1.5px solid var(--line);
+  font-family:'Noto Sans TC',sans-serif;font-size:13px;border-radius:12px;cursor:pointer;margin-top:8px;display:none;}
+.clear-cart-btn{width:100%;padding:11px;background:transparent;color:var(--accent);
+  border:1.5px solid rgba(200,75,47,0.3);font-family:'Noto Sans TC',sans-serif;font-size:13px;
+  border-radius:12px;cursor:pointer;margin-top:8px;display:none;}
 
+/* AI card */
+.ai-card{background:var(--card);border-radius:16px;border:1px solid var(--line);
+  box-shadow:0 2px 16px var(--shadow);padding:20px;max-width:480px;margin:0 auto 16px;}
+.ai-stitle{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;color:var(--blue);
+  letter-spacing:0.12em;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.ai-stitle::after{content:'';flex:1;height:1px;background:var(--line);}
+.ai-btn{width:100%;padding:12px;background:var(--blue);color:white;font-family:'Noto Serif TC',serif;
+  font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:opacity 0.15s;}
+.ai-btn:hover{opacity:0.88;}
+.ai-btn:disabled{opacity:0.5;cursor:not-allowed;}
+.search-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+.search-btn{padding:10px 8px;border-radius:10px;border:1.5px solid var(--line);background:transparent;
+  font-family:'Noto Sans TC',sans-serif;font-size:12px;font-weight:600;cursor:pointer;
+  text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px;color:var(--ink);transition:all 0.15s;}
+.search-btn.shopee{border-color:rgba(238,77,45,0.3);color:#ee4d2d;}
+.search-btn.ruten{border-color:rgba(37,99,176,0.3);color:var(--blue);}
+.ai-result{margin-top:14px;display:none;}
+.ai-result.show{display:block;}
+.ai-dots{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink3);padding:8px 0;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:bounce 1.2s infinite;}
+.dot:nth-child(2){animation-delay:0.2s;}
+.dot:nth-child(3){animation-delay:0.4s;}
+@keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:0.4;}40%{transform:scale(1);opacity:1;}}
+.ai-output{font-size:13px;line-height:1.8;color:var(--ink);}
+
+.analyze-btn{width:100%;padding:10px;background:rgba(37,99,176,0.08);color:var(--blue);
+  border:1.5px solid rgba(37,99,176,0.25);border-radius:10px;font-family:'Noto Sans TC',sans-serif;
+  font-size:13px;font-weight:600;cursor:pointer;transition:all 0.15s;margin-top:6px;display:none;}
+.analyze-btn:hover{background:rgba(37,99,176,0.15);}
+.analyze-btn:disabled{opacity:0.5;cursor:not-allowed;}
+.analyze-result{font-size:11px;color:var(--green);background:rgba(42,122,75,0.06);
+  border:1px solid rgba(42,122,75,0.15);border-radius:8px;padding:8px 10px;margin-top:6px;
+  display:none;line-height:1.6;}
+.note{max-width:480px;margin:0 auto;font-size:11px;color:var(--ink3);line-height:1.75;
+  padding:12px 16px;border-left:3px solid var(--line);border-radius:0 8px 8px 0;background:rgba(255,255,255,0.5);}
+.note strong{color:var(--accent);}
 </style>
 </head>
 <body>
 
-<!-- Top bar -->
 <div class="top-bar">
   <div style="width:44px;"></div>
   <div class="top-bar-title">
@@ -192,10 +249,10 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
     <h1>代購定價計算機</h1>
     <p>單件定價 · 加入購物車 · 合包結算</p>
   </div>
-  <div class="cart-btn" onclick="openCart()">
+  <button class="cart-btn" onclick="openCart()">
     🛒
     <div class="cart-badge" id="cartBadge">0</div>
-  </div>
+  </button>
 </div>
 
 <!-- 商品資訊 -->
@@ -203,31 +260,39 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
   <div class="section-title">商品資訊</div>
   <div class="field-group">
     <div class="field">
-      <label>商品名稱（選填，方便識別）</label>
-      <input type="text" id="productName" placeholder="例：花柄ワンピース" oninput="showSeasonBadge(this.value)">
+      <label>商品名稱（貼日文名稱＋素材，按分析自動填入）</label>
+      <input type="text" id="productName" placeholder="例：花柄ワンピース ポリエステル100% 春夏" oninput="showSeasonBadge(this.value);showAnalyzeBtn()">
+      <button class="analyze-btn" id="analyzeBtn" onclick="analyzeProduct()">🔍 分析商品（自動填入重量、類別、季節）</button>
+      <div class="analyze-result" id="analyzeResult"></div>
       <div id="seasonBadge"></div>
     </div>
     <div class="field-row">
       <div class="field">
         <label>日幣含稅價（JPY）</label>
-        <div class="ip" id="priceWrap"><span>¥</span><input type="number" id="priceJPY" placeholder="3699" oninput="updateTWD();autoEstimate()"></div>
+        <div class="ip" id="priceWrap">
+          <span>¥</span>
+          <input type="number" id="priceJPY" placeholder="3699" oninput="updateTWD();autoEstimate()">
+        </div>
       </div>
       <div class="field">
         <label>JPY → TWD 匯率</label>
-        <div class="ip"><span>×</span><input type="number" id="rate" placeholder="0.215" step="0.001" value="0.215" oninput="updateTWD()"></div>
+        <div class="ip">
+          <span>×</span>
+          <input type="number" id="rate" placeholder="0.215" step="0.001" value="0.215" oninput="updateTWD()">
+        </div>
       </div>
     </div>
     <div id="twdPreview" class="twd-preview" style="opacity:0.4;">— 請輸入日幣價格 —</div>
     <div class="field">
       <label>商品類別</label>
       <select id="category" onchange="onCategoryChange()">
-        <option value="0|cosmetics">化妝品 / 保養品（關稅 0%）</option>
-        <option value="0|misc">日用品 / 雜貨（關稅 0%）</option>
-        <option value="0|book">書籍 / 文具（關稅 0%）</option>
-        <option value="5|fashion" selected>服飾 / 包包（關稅 5%）</option>
-        <option value="10|electronics">電子產品（關稅 10%）</option>
-        <option value="10|toy">玩具 / 模型（關稅 10%）</option>
-        <option value="20|food">食品 / 零食（關稅 20%）</option>
+        <option value="0|cosmetics">化妝品 / 保養品</option>
+        <option value="0|misc">日用品 / 雜貨</option>
+        <option value="0|book">書籍 / 文具</option>
+        <option value="5|fashion" selected>服飾 / 包包</option>
+        <option value="10|electronics">電子產品</option>
+        <option value="10|toy">玩具 / 模型</option>
+        <option value="20|food">食品 / 零食</option>
         <option value="custom|custom">自訂關稅率…</option>
       </select>
     </div>
@@ -237,7 +302,10 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
     </div>
     <div class="field">
       <label>商品重量（克）<span class="tag tag-auto">自動估算</span><span class="tag tag-info">影響運費</span></label>
-      <div class="ip" id="weightWrap"><span>g</span><input type="number" id="weight" placeholder="自動估算中…" oninput="onWeightManual()"></div>
+      <div class="ip" id="weightWrap">
+        <span>g</span>
+        <input type="number" id="weight" placeholder="自動估算中…" oninput="onWeightManual()">
+      </div>
       <div class="auto-hint" id="weightHint"></div>
     </div>
   </div>
@@ -250,11 +318,11 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
     <div class="field">
       <label>運送方式</label>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <button class="toggle-btn ship-btn active" onclick="setShipping('ems',this)">EMS</button>
-        <button class="toggle-btn ship-btn" onclick="setShipping('sal',this)">SAL</button>
-        <button class="toggle-btn ship-btn" onclick="setShipping('small',this)">國際小包</button>
-        <button class="toggle-btn ship-btn" onclick="setShipping('surface',this)">船便</button>
-        <button class="toggle-btn ship-btn" onclick="setShipping('custom',this)" style="grid-column:1/-1;">自訂運費</button>
+        <button class="ship-btn active" onclick="setShipping('ems',this)">EMS</button>
+        <button class="ship-btn" onclick="setShipping('sal',this)">SAL</button>
+        <button class="ship-btn" onclick="setShipping('small',this)">國際小包</button>
+        <button class="ship-btn" onclick="setShipping('surface',this)">船便</button>
+        <button class="ship-btn" onclick="setShipping('custom',this)" style="grid-column:1/-1;">自訂運費</button>
       </div>
     </div>
     <div class="field" id="customShippingField" style="display:none;">
@@ -263,7 +331,10 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
     </div>
     <div class="field">
       <label>包材費用（TWD）<span class="tag tag-auto">自動估算</span></label>
-      <div class="ip" id="packagingWrap"><span>NT$</span><input type="number" id="packaging" placeholder="自動估算中…" oninput="onPackagingManual()"></div>
+      <div class="ip" id="packagingWrap">
+        <span>NT$</span>
+        <input type="number" id="packaging" placeholder="自動估算中…" oninput="onPackagingManual()">
+      </div>
       <div class="auto-hint" id="packagingHint"></div>
     </div>
     <div class="field">
@@ -308,13 +379,13 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
 <button class="calc-btn" onclick="calculate()">✦ 計算建議售價</button>
 <button class="add-cart-btn" id="addCartBtn" onclick="addToCart()">🛒 加入購物車</button>
 
-<!-- 單件結果 -->
+<!-- 結果 -->
 <div class="result-card" id="resultCard">
   <div class="rtitle">成本明細</div>
   <div id="breakdown"></div>
-  <div class="rtitle" style="margin-top:20px;">建議售價</div>
+  <div class="rtitle" style="margin-top:20px;">售價（點選後加入購物車）</div>
   <div class="tiers" id="tiers"></div>
-  <div id="selectedPriceHint" style="display:none;margin-top:10px;font-size:12px;color:rgba(255,255,255,0.5);text-align:center;">點選價格後按「加入購物車」</div>
+  <div id="selectedPriceHint" style="display:none;margin-top:10px;font-size:12px;color:rgba(255,255,255,0.5);text-align:center;"></div>
 </div>
 
 <!-- AI -->
@@ -322,8 +393,8 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
   <div class="ai-stitle">AI 市場行情分析</div>
   <button class="ai-btn" id="aiBtn" onclick="runAI()">🔍 AI 分析蝦皮/露天行情</button>
   <div class="search-btns">
-    <a id="shopeeLink" class="search-btn shopee" href="#" target="_blank" onclick="openSearch('shopee')">🛍 搜蝦皮</a>
-    <a id="rutenLink" class="search-btn ruten" href="#" target="_blank" onclick="openSearch('ruten')">🔎 搜露天</a>
+    <button class="search-btn shopee" onclick="openSearch('shopee')">🛍 搜蝦皮</button>
+    <button class="search-btn ruten" onclick="openSearch('ruten')">🔎 搜露天</button>
   </div>
   <div style="font-size:10px;color:var(--ink3);margin-top:6px;text-align:center;">點擊直接跳到搜尋結果，自己比對實際行情</div>
   <div class="ai-result" id="aiResult">
@@ -336,27 +407,26 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
 </div>
 
 <div class="note">
-  <strong>購物車：</strong>右上角 🛒，同運送方式的商品合包結算，運費按重量比例重分攤，關稅超標部分按商品台幣價比例分攤。<br>
-  <strong>綠色欄位</strong>為自動估算，可手動覆蓋。
+  <strong>商品名稱欄：</strong>貼入日文名稱＋素材（例：花柄ワンピース ポリエステル100% 春夏），AI 分析時自動翻譯、判斷季節、估算重量。<br>
+  <strong>綠色欄位</strong>為自動估算，可手動覆蓋。<br>
+  <strong>購物車：</strong>同運送方式合包結算，運費按重量比例重新分攤。
 </div>
 
 <!-- Cart overlay -->
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
-
-<!-- Cart panel -->
 <div class="cart-panel" id="cartPanel">
   <div class="cart-header">
     <h2>🛒 購物車</h2>
     <button class="cart-close" onclick="closeCart()">✕</button>
   </div>
   <div class="cart-body" id="cartBody">
-    <div class="cart-empty">還沒有加入任何商品<br><span style="font-size:11px;opacity:0.6;">計算完單件後按「加入購物車」</span></div>
+    <div class="cart-empty">還沒有加入任何商品</div>
   </div>
   <div class="cart-footer">
     <div style="font-size:11px;color:var(--ink3);margin-bottom:8px;">合包結算關稅模式</div>
     <div class="cart-tax-row">
-      <button class="toggle-btn cart-tax-btn active" id="cartTaxFreeBtn" onclick="setCartTaxMode('free',this)">🚫 不付關稅</button>
-      <button class="toggle-btn cart-tax-btn" id="cartTaxOnBtn" onclick="setCartTaxMode('on',this)">📋 計算關稅</button>
+      <button class="cart-tax-btn active" id="cartTaxFreeBtn" onclick="setCartTaxMode('free',this)">🚫 不付關稅</button>
+      <button class="cart-tax-btn" id="cartTaxOnBtn" onclick="setCartTaxMode('on',this)">📋 計算關稅</button>
     </div>
     <button class="settle-btn" onclick="settle()">✦ 合包結算</button>
     <div class="settle-result" id="settleResult"></div>
@@ -367,623 +437,687 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(20
 
 <script>
 // ── State ─────────────────────────────────────────────
-let shippingMode='ems', weightManual=false, packagingManual=false, profitMode='markup';
-let lastTotalCost=0, lastResult=null;
-let cart=[]; // [{id, name, jpy, twd, weight, shippingMode, cost, suggestedPrice, profit, pct, taxRate, category}]
-let cartIdSeq=0;
-let cartTaxFree=true;
+var shippingMode = 'ems';
+var weightManual = false;
+var packagingManual = false;
+var profitMode = 'markup';
+var lastTotalCost = 0;
+var lastResult = null;
+var cart = [];
+var cartIdSeq = 0;
+var cartTaxFree = true;
+
+// ── Season ────────────────────────────────────────────
+function detectSeason(text) {
+  var t = text || '';
+  if (/春夏|SS|spring.*summer/i.test(t)) return { label: '春夏', cls: 'season-spring', icon: '🌸' };
+  if (/秋冬|AW|FW|fall.*winter|autumn/i.test(t)) return { label: '秋冬', cls: 'season-fall', icon: '🍂' };
+  if (/夏|summer|涼感|UV|半袖|シフォン|ノースリーブ|リネン|麻/i.test(t)) return { label: '夏季', cls: 'season-summer', icon: '☀️' };
+  if (/冬|winter|ウール|wool|ニット|knit|裏起毛|ダウン|コート/i.test(t)) return { label: '冬季', cls: 'season-winter', icon: '❄️' };
+  if (/春|spring|花柄|floral/i.test(t)) return { label: '春季', cls: 'season-spring', icon: '🌸' };
+  if (/秋|fall|autumn|チェック|コーデュロイ/i.test(t)) return { label: '秋季', cls: 'season-fall', icon: '🍂' };
+  return null;
+}
+
+function showSeasonBadge(text) {
+  var s = detectSeason(text || '');
+  var el = document.getElementById('seasonBadge');
+  if (s) {
+    el.innerHTML = '<div class="season-badge ' + s.cls + '">' + s.icon + ' ' + s.label + '商品</div>';
+  } else {
+    el.innerHTML = '';
+  }
+}
 
 // ── TWD preview ───────────────────────────────────────
-function updateTWD(){
-  const jpy=parseFloat(document.getElementById('priceJPY').value)||0;
-  const rate=parseFloat(document.getElementById('rate').value)||0.215;
-  const el=document.getElementById('twdPreview');
-  if(jpy>0){
-    el.innerHTML='<span style="font-size:11px;opacity:0.55;margin-right:6px;">換算台幣</span>NT$ '+Math.round(jpy*rate).toLocaleString();
-    el.style.opacity='1';
-  }else{
-    el.textContent='— 請輸入日幣價格 —';
-    el.style.opacity='0.4';
+function updateTWD() {
+  var jpy = parseFloat(document.getElementById('priceJPY').value) || 0;
+  var rate = parseFloat(document.getElementById('rate').value) || 0.215;
+  var el = document.getElementById('twdPreview');
+  if (jpy > 0) {
+    var twd = Math.round(jpy * rate);
+    el.innerHTML = '<span style="font-size:11px;opacity:0.55;margin-right:6px;">換算台幣</span>NT$ ' + twd.toLocaleString();
+    el.style.opacity = '1';
+  } else {
+    el.textContent = '— 請輸入日幣價格 —';
+    el.style.opacity = '0.4';
   }
 }
 
 // ── Weight tables ─────────────────────────────────────
-const WEIGHT_TABLE={
-  cosmetics:[[1000,80,'小罐保養品'],[3000,180,'標準瓶裝'],[8000,300,'大瓶精華'],[Infinity,450,'高端套組']],
-  fashion:  [[2000,150,'薄料上衣/配件'],[5000,350,'標準服飾'],[15000,600,'外套/厚重'],[Infinity,900,'皮件/包包']],
+var WEIGHT_TABLE = {
+  cosmetics: [[1000,80,'小罐保養品'],[3000,180,'標準瓶裝'],[8000,300,'大瓶精華'],[Infinity,450,'高端套組']],
+  fashion:   [[2000,150,'薄料上衣/配件'],[5000,350,'標準服飾'],[15000,600,'外套/厚重'],[Infinity,900,'皮件/包包']],
   electronics:[[3000,200,'小型配件'],[10000,500,'中型電子'],[Infinity,1200,'大型電子']],
-  toy:      [[2000,200,'小模型/盲盒'],[6000,500,'中型玩具'],[Infinity,1000,'大型模型']],
-  food:     [[1000,150,'輕量零食'],[3000,350,'標準食品'],[Infinity,700,'大包裝/禮盒']],
-  misc:     [[1000,100,'輕量雜貨'],[3000,250,'一般日用品'],[Infinity,500,'較重日用品']],
-  book:     [[1500,200,'薄冊/小書'],[Infinity,400,'書籍/文具組']],
+  toy:       [[2000,200,'小模型/盲盒'],[6000,500,'中型玩具'],[Infinity,1000,'大型模型']],
+  food:      [[1000,150,'輕量零食'],[3000,350,'標準食品'],[Infinity,700,'大包裝/禮盒']],
+  misc:      [[1000,100,'輕量雜貨'],[3000,250,'一般日用品'],[Infinity,500,'較重日用品']],
+  book:      [[1500,200,'薄冊/小書'],[Infinity,400,'書籍/文具組']]
 };
-function estimateWeight(type,priceJPY){
-  const t=WEIGHT_TABLE[type]||WEIGHT_TABLE.misc;
-  for(const[maxP,g,d]of t)if(priceJPY<=maxP)return{w:g,d};
-  const l=t[t.length-1];return{w:l[1],d:l[2]};
+
+function estimateWeight(type, priceJPY) {
+  var table = WEIGHT_TABLE[type] || WEIGHT_TABLE['misc'];
+  for (var i = 0; i < table.length; i++) {
+    if (priceJPY <= table[i][0]) return { w: table[i][1], d: table[i][2] };
+  }
+  var last = table[table.length - 1];
+  return { w: last[1], d: last[2] };
 }
-function estimatePackaging(w){
-  if(w<=200)return{cost:18,d:'氣泡袋（小）'};
-  if(w<=500)return{cost:28,d:'氣泡袋（中）'};
-  if(w<=1000)return{cost:55,d:'小紙箱＋緩衝'};
-  if(w<=2000)return{cost:80,d:'中紙箱＋緩衝'};
-  return{cost:120,d:'大紙箱＋緩衝'};
+
+function estimatePackaging(w) {
+  if (w <= 200) return { cost: 18, d: '氣泡袋（小）' };
+  if (w <= 500) return { cost: 28, d: '氣泡袋（中）' };
+  if (w <= 1000) return { cost: 55, d: '小紙箱＋緩衝' };
+  if (w <= 2000) return { cost: 80, d: '中紙箱＋緩衝' };
+  return { cost: 120, d: '大紙箱＋緩衝' };
 }
-function parseCat(){
-  const[tax,type]=document.getElementById('category').value.split('|');
-  return{tax,type};
+
+function parseCat() {
+  var val = document.getElementById('category').value;
+  var parts = val.split('|');
+  return { tax: parts[0], type: parts[1] };
 }
-function onCategoryChange(){
-  const{type}=parseCat();
-  document.getElementById('customTaxField').style.display=type==='custom'?'flex':'none';
-  weightManual=false;packagingManual=false;autoEstimate();
+
+function onCategoryChange() {
+  var cat = parseCat();
+  document.getElementById('customTaxField').style.display = cat.type === 'custom' ? 'flex' : 'none';
+  weightManual = false;
+  packagingManual = false;
+  autoEstimate();
 }
-function autoEstimate(){
-  const jpy=parseFloat(document.getElementById('priceJPY').value)||0;
-  const{type}=parseCat();
-  if(type==='custom')return;
-  if(!weightManual){
-    const{w,d}=estimateWeight(type,jpy);
-    document.getElementById('weight').value=w;
+
+function autoEstimate() {
+  var jpy = parseFloat(document.getElementById('priceJPY').value) || 0;
+  var cat = parseCat();
+  if (cat.type === 'custom') return;
+  if (!weightManual) {
+    var res = estimateWeight(cat.type, jpy);
+    document.getElementById('weight').value = res.w;
     document.getElementById('weightWrap').classList.add('auto');
-    const h=document.getElementById('weightHint');h.textContent=d;h.style.display='block';
-    if(!packagingManual){
-      const{cost,d:pd}=estimatePackaging(w);
-      document.getElementById('packaging').value=cost;
+    var h = document.getElementById('weightHint');
+    h.textContent = res.d;
+    h.style.display = 'block';
+    if (!packagingManual) {
+      var pkg = estimatePackaging(res.w);
+      document.getElementById('packaging').value = pkg.cost;
       document.getElementById('packagingWrap').classList.add('auto');
-      const ph=document.getElementById('packagingHint');ph.textContent=pd;ph.style.display='block';
+      var ph = document.getElementById('packagingHint');
+      ph.textContent = pkg.d;
+      ph.style.display = 'block';
     }
   }
 }
-function onWeightManual(){
-  weightManual=true;
+
+function onWeightManual() {
+  weightManual = true;
   document.getElementById('weightWrap').classList.remove('auto');
-  document.getElementById('weightHint').style.display='none';
-  const w=parseFloat(document.getElementById('weight').value)||0;
-  if(!packagingManual&&w>0){
-    const{cost,d}=estimatePackaging(w);
-    document.getElementById('packaging').value=cost;
+  document.getElementById('weightHint').style.display = 'none';
+  var w = parseFloat(document.getElementById('weight').value) || 0;
+  if (!packagingManual && w > 0) {
+    var pkg = estimatePackaging(w);
+    document.getElementById('packaging').value = pkg.cost;
     document.getElementById('packagingWrap').classList.add('auto');
-    const ph=document.getElementById('packagingHint');ph.textContent=d;ph.style.display='block';
+    var ph = document.getElementById('packagingHint');
+    ph.textContent = pkg.d;
+    ph.style.display = 'block';
   }
 }
-function onPackagingManual(){
-  packagingManual=true;
+
+function onPackagingManual() {
+  packagingManual = true;
   document.getElementById('packagingWrap').classList.remove('auto');
-  document.getElementById('packagingHint').style.display='none';
+  document.getElementById('packagingHint').style.display = 'none';
 }
 
 // ── Shipping ──────────────────────────────────────────
-function setShipping(mode,btn){
-  shippingMode=mode;
-  document.querySelectorAll('.ship-btn').forEach(b=>b.classList.remove('active'));
+function setShipping(mode, btn) {
+  shippingMode = mode;
+  var btns = document.querySelectorAll('.ship-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
   btn.classList.add('active');
-  document.getElementById('customShippingField').style.display=mode==='custom'?'block':'none';
+  document.getElementById('customShippingField').style.display = mode === 'custom' ? 'block' : 'none';
 }
-function calcShipping(w,mode){
-  if(mode==='ems'){if(w<=500)return 580;if(w<=1000)return 780;if(w<=2000)return 1050;if(w<=3000)return 1280;if(w<=5000)return 1680;return 1680+Math.ceil((w-5000)/1000)*250;}
-  if(mode==='sal'){if(w<=500)return 320;if(w<=1000)return 430;if(w<=2000)return 600;if(w<=3000)return 760;if(w<=5000)return 980;return 980+Math.ceil((w-5000)/1000)*150;}
-  if(mode==='small'){if(w<=100)return 180;if(w<=250)return 230;if(w<=500)return 300;if(w<=1000)return 400;if(w<=2000)return 540;return 540+Math.ceil((w-2000)/1000)*120;}
-  if(mode==='surface'){if(w<=500)return 200;if(w<=1000)return 280;if(w<=2000)return 380;if(w<=5000)return 560;return 560+Math.ceil((w-5000)/1000)*80;}
+
+function calcShipping(w, mode) {
+  if (mode === 'ems') {
+    if (w <= 500) return 580; if (w <= 1000) return 780; if (w <= 2000) return 1050;
+    if (w <= 3000) return 1280; if (w <= 5000) return 1680;
+    return 1680 + Math.ceil((w - 5000) / 1000) * 250;
+  }
+  if (mode === 'sal') {
+    if (w <= 500) return 320; if (w <= 1000) return 430; if (w <= 2000) return 600;
+    if (w <= 3000) return 760; if (w <= 5000) return 980;
+    return 980 + Math.ceil((w - 5000) / 1000) * 150;
+  }
+  if (mode === 'small') {
+    if (w <= 100) return 180; if (w <= 250) return 230; if (w <= 500) return 300;
+    if (w <= 1000) return 400; if (w <= 2000) return 540;
+    return 540 + Math.ceil((w - 2000) / 1000) * 120;
+  }
+  if (mode === 'surface') {
+    if (w <= 500) return 200; if (w <= 1000) return 280; if (w <= 2000) return 380;
+    if (w <= 5000) return 560; return 560 + Math.ceil((w - 5000) / 1000) * 80;
+  }
   return 0;
 }
-const SHIP_NAMES={ems:'EMS',sal:'SAL',small:'國際小包',surface:'船便',custom:'自訂'};
+
+var SHIP_NAMES = { ems: 'EMS', sal: 'SAL', small: '國際小包', surface: '船便', custom: '自訂' };
 
 // ── Profit ────────────────────────────────────────────
-function setProfitMode(mode,btn){
-  profitMode=mode;
-  document.querySelectorAll('#pmMarkup,#pmFixed').forEach(b=>b.classList.remove('active'));
+function setProfitMode(mode, btn) {
+  profitMode = mode;
+  document.getElementById('pmMarkup').classList.remove('active');
+  document.getElementById('pmFixed').classList.remove('active');
   btn.classList.add('active');
-  document.getElementById('markupSection').style.display=mode==='markup'?'block':'none';
-  document.getElementById('fixedSection').style.display=mode==='fixed'?'block':'none';
+  document.getElementById('markupSection').style.display = mode === 'markup' ? 'block' : 'none';
+  document.getElementById('fixedSection').style.display = mode === 'fixed' ? 'block' : 'none';
   syncProfit();
 }
-function syncProfit(){
-  if(lastTotalCost<=0)return;
-  if(profitMode==='markup'){
-    const pct=parseFloat(document.getElementById('markupPct').value)||0;
-    document.getElementById('markupLinked').innerHTML=`成本 ${fmt(lastTotalCost)} × ${pct}% → 每件賺 <span>${fmt(lastTotalCost*pct/100)}</span>`;
-  }else{
-    const fixed=parseFloat(document.getElementById('fixedProfit').value)||0;
-    const pct=lastTotalCost>0?(fixed/lastTotalCost*100).toFixed(1):'—';
-    document.getElementById('fixedLinked').innerHTML=`成本 ${fmt(lastTotalCost)} → 加價幅度約 <span>${pct}%</span>`;
+
+function syncProfit() {
+  if (lastTotalCost <= 0) return;
+  if (profitMode === 'markup') {
+    var pct = parseFloat(document.getElementById('markupPct').value) || 0;
+    document.getElementById('markupLinked').innerHTML = '成本 ' + fmt(lastTotalCost) + ' × ' + pct + '% → 每件賺 <span>' + fmt(lastTotalCost * pct / 100) + '</span>';
+  } else {
+    var fixed = parseFloat(document.getElementById('fixedProfit').value) || 0;
+    var p = lastTotalCost > 0 ? (fixed / lastTotalCost * 100).toFixed(1) : '—';
+    document.getElementById('fixedLinked').innerHTML = '成本 ' + fmt(lastTotalCost) + ' → 加價幅度約 <span>' + p + '%</span>';
   }
 }
-function getSellPrice(cost){
-  if(profitMode==='markup'){
-    const pct=parseFloat(document.getElementById('markupPct').value)||0;
-    return{price:cost*(1+pct/100),profit:cost*pct/100,pct};
-  }else{
-    const fixed=parseFloat(document.getElementById('fixedProfit').value)||0;
-    return{price:cost+fixed,profit:fixed,pct:(cost>0?fixed/cost*100:0).toFixed(1)};
+
+function getSellPrice(cost) {
+  if (profitMode === 'markup') {
+    var pct = parseFloat(document.getElementById('markupPct').value) || 0;
+    return { price: cost * (1 + pct / 100), profit: cost * pct / 100, pct: pct };
+  } else {
+    var fixed = parseFloat(document.getElementById('fixedProfit').value) || 0;
+    var p = cost > 0 ? (fixed / cost * 100) : 0;
+    return { price: cost + fixed, profit: fixed, pct: p.toFixed(1) };
   }
 }
 
 // ── Format ────────────────────────────────────────────
-function fmt(n){return'NT$ '+Math.round(n).toLocaleString('zh-TW');}
-function fmtJPY(n){return'¥'+Math.round(n).toLocaleString('ja-JP');}
-
-// ── Calculate ─────────────────────────────────────────
-function calculate(){
-  const jpy=parseFloat(document.getElementById('priceJPY').value)||0;
-  const rate=parseFloat(document.getElementById('rate').value)||0.215;
-  const weight=parseFloat(document.getElementById('weight').value)||300;
-  const packaging=parseFloat(document.getElementById('packaging').value)||0;
-  const serviceFee=parseFloat(document.getElementById('serviceFee').value)||0;
-  const misc=parseFloat(document.getElementById('misc').value)||0;
-  const{tax,type}=parseCat();
-  const taxRate=tax==='custom'?(parseFloat(document.getElementById('customTax').value)||0)/100:parseFloat(tax)/100;
-
-  const twd=jpy*rate;
-  const shipping=shippingMode==='custom'?(parseFloat(document.getElementById('customShipping').value)||0):calcShipping(weight,shippingMode);
-  // 完稅價格 = 商品台幣價 + 運費（與購物車邏輯一致）
-  const dutiableValue=twd+shipping;
-  const taxed=dutiableValue>2000;
-  const duty=taxed?twd*taxRate:0;
-  const vat=taxed?(twd+duty)*0.05:0;
-  const totalCost=twd+shipping+packaging+serviceFee+misc+duty+vat;
-
-  lastTotalCost=totalCost;syncProfit();
-  const{price:suggested,profit,pct}=getSellPrice(totalCost);
-  // 保守：固定加價15%；積極：固定加價45%（不依賴使用者設定的幅度）
-  const pLowPrice=profitMode==='markup'
-    ?totalCost*1.15
-    :totalCost+(profit*0.5);
-  const pHighPrice=profitMode==='markup'
-    ?totalCost*1.45
-    :totalCost+(profit*1.5);
-
-  const isAutoW=document.getElementById('weightHint').style.display!=='none';
-  const isAutoP=document.getElementById('packagingHint').style.display!=='none';
-
-  document.getElementById('breakdown').innerHTML=`
-    <div class="cr"><span class="lbl">商品含稅原價</span><span class="val">${fmtJPY(jpy)} ≈ ${fmt(twd)}</span></div>
-    <div class="cr"><span class="lbl">國際運費（${SHIP_NAMES[shippingMode]}，${weight}g${isAutoW?' 估算':''}）</span><span class="val">${fmt(shipping)}</span></div>
-    <div class="cr"><span class="lbl">包材${isAutoP?' (估算)':''}</span><span class="val">${fmt(packaging)}</span></div>
-    ${serviceFee>0?`<div class="cr"><span class="lbl">手續費/平台費</span><span class="val">${fmt(serviceFee)}</span></div>`:''}
-    ${misc>0?`<div class="cr"><span class="lbl">其他費用</span><span class="val">${fmt(misc)}</span></div>`:''}
-    ${taxed?`<div class="cr"><span class="lbl">進口關稅</span><span class="val">${fmt(duty)}</span></div><div class="cr sub"><span class="lbl">└ 營業稅 5%</span><span class="val">${fmt(vat)}</span></div>`:''}
-    <div class="cr total"><span class="lbl">總成本</span><span class="val">${fmt(totalCost)}</span></div>`;
-
-  document.getElementById('tiers').innerHTML=`
-    <div class="tier" onclick="selectTier(${Math.round(pLowPrice)},this)"><div class="tier-lbl">保守</div><div class="tier-price">${fmt(pLowPrice)}</div><div class="tier-sub">加價15%／賺${fmt(pLowPrice-totalCost)}</div></div>
-    <div class="tier hi selected" onclick="selectTier(${Math.round(suggested)},this)"><div class="tier-lbl">✦ 你的設定</div><div class="tier-price">${fmt(suggested)}</div><div class="tier-sub">加價${parseFloat(pct).toFixed(0)}%／賺${fmt(profit)}</div></div>
-    <div class="tier" onclick="selectTier(${Math.round(pHighPrice)},this)"><div class="tier-lbl">積極</div><div class="tier-price">${fmt(pHighPrice)}</div><div class="tier-sub">加價45%／賺${fmt(pHighPrice-totalCost)}</div></div>`;
-  document.getElementById('selectedPriceHint').style.display='block';
-
-  const rc=document.getElementById('resultCard');
-  rc.classList.remove('show');void rc.offsetWidth;rc.classList.add('show');
-  document.getElementById('addCartBtn').style.display='block';
-  document.getElementById('aiCard').style.display='block';
-
-  // Store for cart
-  lastResult={
-    name:document.getElementById('productName').value||'商品',
-    jpy,twd,weight,shippingMode,
-    packaging,serviceFee,misc,
-    taxRate,type,
-    cost:totalCost,suggestedPrice:suggested,profit,pct,
-    rate,
-    selectedPrice:suggested // default to suggested, updated when user clicks a tier
-  };
-  window._pLowPrice=pLowPrice;
-  window._suggested=suggested;
-  window._pHighPrice=pHighPrice;
-  window._calcResult=lastResult;
-  rc.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
-
+function fmt(n) { return 'NT$ ' + Math.round(n).toLocaleString('zh-TW'); }
+function fmtJPY(n) { return '¥' + Math.round(n).toLocaleString('ja-JP'); }
 
 // ── Tier selection ────────────────────────────────────
-function selectTier(price, el){
-  document.querySelectorAll('.tier').forEach(t=>t.classList.remove('selected'));
+function selectTier(price, el) {
+  var tiers = document.querySelectorAll('.tier');
+  for (var i = 0; i < tiers.length; i++) tiers[i].classList.remove('selected');
   el.classList.add('selected');
-  if(lastResult) lastResult.selectedPrice=price;
-  const hint=document.getElementById('selectedPriceHint');
-  hint.textContent=`已選：NT$ ${price.toLocaleString('zh-TW')} → 按「加入購物車」確認`;
-  hint.style.color='rgba(232,160,32,0.9)';
+  if (lastResult) lastResult.selectedPrice = price;
+  var hint = document.getElementById('selectedPriceHint');
+  hint.textContent = '已選：NT$ ' + price.toLocaleString('zh-TW') + ' → 按「加入購物車」確認';
+  hint.style.display = 'block';
+  hint.style.color = 'rgba(232,160,32,0.9)';
+}
+
+// ── Calculate ─────────────────────────────────────────
+function calculate() {
+  var jpy = parseFloat(document.getElementById('priceJPY').value) || 0;
+  var rate = parseFloat(document.getElementById('rate').value) || 0.215;
+  var weight = parseFloat(document.getElementById('weight').value) || 300;
+  var packaging = parseFloat(document.getElementById('packaging').value) || 0;
+  var serviceFee = parseFloat(document.getElementById('serviceFee').value) || 0;
+  var misc = parseFloat(document.getElementById('misc').value) || 0;
+  var cat = parseCat();
+  var taxRate = cat.tax === 'custom'
+    ? (parseFloat(document.getElementById('customTax').value) || 0) / 100
+    : parseFloat(cat.tax) / 100;
+
+  var twd = jpy * rate;
+  var shipping = shippingMode === 'custom'
+    ? (parseFloat(document.getElementById('customShipping').value) || 0)
+    : calcShipping(weight, shippingMode);
+
+  var dutiableValue = twd + shipping;
+  var taxed = dutiableValue > 2000;
+  var duty = taxed ? twd * taxRate : 0;
+  var vat = taxed ? (twd + duty) * 0.05 : 0;
+  var totalCost = twd + shipping + packaging + serviceFee + misc + duty + vat;
+
+  lastTotalCost = totalCost;
+  syncProfit();
+
+  var sp = getSellPrice(totalCost);
+  var suggested = sp.price;
+  var profit = sp.profit;
+  var pct = sp.pct;
+  var pLowPrice = totalCost * 1.15;
+  var pHighPrice = totalCost * 1.45;
+
+  var isAutoW = document.getElementById('weightHint').style.display !== 'none';
+  var isAutoP = document.getElementById('packagingHint').style.display !== 'none';
+
+  var bdHtml = '';
+  bdHtml += '<div class="cr"><span class="lbl">商品含稅原價</span><span class="val">' + fmtJPY(jpy) + ' ≈ ' + fmt(twd) + '</span></div>';
+  bdHtml += '<div class="cr"><span class="lbl">國際運費（' + SHIP_NAMES[shippingMode] + '，' + weight + 'g' + (isAutoW ? ' 估算' : '') + '）</span><span class="val">' + fmt(shipping) + '</span></div>';
+  bdHtml += '<div class="cr"><span class="lbl">包材' + (isAutoP ? '（估算）' : '') + '</span><span class="val">' + fmt(packaging) + '</span></div>';
+  if (serviceFee > 0) bdHtml += '<div class="cr"><span class="lbl">手續費/平台費</span><span class="val">' + fmt(serviceFee) + '</span></div>';
+  if (misc > 0) bdHtml += '<div class="cr"><span class="lbl">其他費用</span><span class="val">' + fmt(misc) + '</span></div>';
+  if (taxed) {
+    bdHtml += '<div class="cr"><span class="lbl">進口關稅（完稅價 ' + fmt(dutiableValue) + '）</span><span class="val">' + fmt(duty) + '</span></div>';
+    bdHtml += '<div class="cr sub"><span class="lbl">└ 營業稅 5%</span><span class="val">' + fmt(vat) + '</span></div>';
+  }
+  bdHtml += '<div class="cr total"><span class="lbl">總成本</span><span class="val">' + fmt(totalCost) + '</span></div>';
+  document.getElementById('breakdown').innerHTML = bdHtml;
+
+  var pLowProfit = pLowPrice - totalCost;
+  var pHighProfit = pHighPrice - totalCost;
+  document.getElementById('tiers').innerHTML =
+    '<div class="tier" onclick="selectTier(' + Math.round(pLowPrice) + ',this)">' +
+      '<div class="tier-lbl">保守</div>' +
+      '<div class="tier-price">' + fmt(pLowPrice) + '</div>' +
+      '<div class="tier-sub">加價15%／賺' + fmt(pLowProfit) + '</div>' +
+    '</div>' +
+    '<div class="tier hi selected" onclick="selectTier(' + Math.round(suggested) + ',this)">' +
+      '<div class="tier-lbl">✦ 你的設定</div>' +
+      '<div class="tier-price">' + fmt(suggested) + '</div>' +
+      '<div class="tier-sub">加價' + parseFloat(pct).toFixed(0) + '%／賺' + fmt(profit) + '</div>' +
+    '</div>' +
+    '<div class="tier" onclick="selectTier(' + Math.round(pHighPrice) + ',this)">' +
+      '<div class="tier-lbl">積極</div>' +
+      '<div class="tier-price">' + fmt(pHighPrice) + '</div>' +
+      '<div class="tier-sub">加價45%／賺' + fmt(pHighProfit) + '</div>' +
+    '</div>';
+
+  document.getElementById('selectedPriceHint').style.display = 'block';
+  document.getElementById('selectedPriceHint').textContent = '點選售價後按「加入購物車」';
+  document.getElementById('selectedPriceHint').style.color = 'rgba(255,255,255,0.5)';
+
+  var rc = document.getElementById('resultCard');
+  rc.classList.remove('show');
+  void rc.offsetWidth;
+  rc.classList.add('show');
+  document.getElementById('addCartBtn').style.display = 'block';
+  document.getElementById('aiCard').style.display = 'block';
+
+  lastResult = {
+    name: document.getElementById('productName').value || '商品',
+    jpy: jpy, twd: twd, weight: weight, shippingMode: shippingMode,
+    packaging: packaging, serviceFee: serviceFee, misc: misc,
+    taxRate: taxRate, type: cat.type,
+    cost: totalCost, suggestedPrice: suggested, profit: profit, pct: pct, rate: rate,
+    selectedPrice: suggested
+  };
+  window._calcResult = lastResult;
+  rc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // ── Cart ──────────────────────────────────────────────
-function addToCart(){
-  if(!lastResult)return;
+function addToCart() {
+  if (!lastResult) return;
   cartIdSeq++;
-  cart.push({...lastResult,id:cartIdSeq,suggestedPrice:lastResult.selectedPrice||lastResult.suggestedPrice});
+  var item = {};
+  for (var k in lastResult) item[k] = lastResult[k];
+  item.id = cartIdSeq;
+  item.suggestedPrice = lastResult.selectedPrice || lastResult.suggestedPrice;
+  cart.push(item);
   renderCart();
   updateCartBadge();
-  // Flash feedback
-  const btn=document.getElementById('addCartBtn');
-  btn.textContent='✓ 已加入！';btn.style.background='#2a7a4b';
-  setTimeout(()=>{btn.textContent='🛒 加入購物車';btn.style.background='var(--green)';},1200);
+  var btn = document.getElementById('addCartBtn');
+  btn.textContent = '✓ 已加入！';
+  btn.style.background = '#2a7a4b';
+  setTimeout(function() { btn.textContent = '🛒 加入購物車'; btn.style.background = 'var(--green)'; }, 1200);
 }
 
-function removeFromCart(id){
-  cart=cart.filter(i=>i.id!==id);
-  renderCart();updateCartBadge();
-  if(document.getElementById('settleResult').classList.contains('show'))
-    document.getElementById('settleResult').classList.remove('show');
-}
-
-function updateCartBadge(){
-  const badge=document.getElementById('cartBadge');
-  if(cart.length>0){badge.textContent=cart.length;badge.style.display='flex';}
-  else{badge.style.display='none';}
-}
-
-function openCart(){
+function removeFromCart(id) {
+  cart = cart.filter(function(i) { return i.id !== id; });
   renderCart();
-  document.getElementById('overlay').classList.add('show');
-  document.getElementById('cartPanel').classList.add('show');
-}
-function closeCart(){
-  document.getElementById('overlay').classList.remove('show');
-  document.getElementById('cartPanel').classList.remove('show');
+  updateCartBadge();
+  document.getElementById('settleResult').classList.remove('show');
 }
 
-function renderCart(){
-  const body=document.getElementById('cartBody');
-  if(cart.length===0){
-    body.innerHTML='<div class="cart-empty">還沒有加入任何商品<br><span style="font-size:11px;opacity:0.6;">計算完單件後按「加入購物車」</span></div>';
-    return;
-  }
-  // Group by shipping mode
-  const groups={};
-  for(const item of cart){
-    const k=item.shippingMode;
-    if(!groups[k])groups[k]=[];
-    groups[k].push(item);
-  }
-  let html='';
-  for(const[mode,items]of Object.entries(groups)){
-    html+=`<div class="group-header">${SHIP_NAMES[mode]} 包裹（${items.length}件）</div>`;
-    for(const item of items){
-      html+=`
-      <div class="cart-item" id="ci-${item.id}">
-        <div class="ci-header">
-          <div class="ci-name">${item.name}</div>
-          <button class="ci-del" onclick="removeFromCart(${item.id})">✕</button>
-        </div>
-        <div class="ci-meta">
-          <span class="ci-tag">${fmtJPY(item.jpy)}</span>
-          <span class="ci-tag">${item.weight}g</span>
-          <span class="ci-tag green">${SHIP_NAMES[item.shippingMode]}</span>
-        </div>
-        <div class="ci-row"><span class="k">單件成本</span><span class="v">${fmt(item.cost)}</span></div>
-        <div class="ci-row hi"><span class="k">單件建議售價</span><span class="v">${fmt(item.suggestedPrice)}</span></div>
-        <div class="custom-price-row">
-          <label>最終售價（自訂）</label>
-          <div class="custom-price-wrap">
-            <div class="ip"><span>NT$</span><input type="number" id="cprice-${item.id}" placeholder="${Math.round(item.suggestedPrice)}" value="${Math.round(item.suggestedPrice)}"></div>
-            <span class="use-suggested" onclick="document.getElementById('cprice-${item.id}').value=${Math.round(item.suggestedPrice)}">用建議價</span>
-          </div>
-        </div>
-      </div>`;
-    }
-  }
-  body.innerHTML=html;
+function updateCartBadge() {
+  var badge = document.getElementById('cartBadge');
+  if (cart.length > 0) { badge.textContent = cart.length; badge.style.display = 'flex'; }
+  else { badge.style.display = 'none'; }
 }
 
-// ── Cart tax mode ─────────────────────────────────────
-function setCartTaxMode(mode,btn){
-  cartTaxFree=mode==='free';
-  document.querySelectorAll('.cart-tax-btn').forEach(b=>b.classList.remove('active'));
+function openCart() { renderCart(); document.getElementById('overlay').classList.add('show'); document.getElementById('cartPanel').classList.add('show'); }
+function closeCart() { document.getElementById('overlay').classList.remove('show'); document.getElementById('cartPanel').classList.remove('show'); }
+
+function renderCart() {
+  var body = document.getElementById('cartBody');
+  if (cart.length === 0) { body.innerHTML = '<div class="cart-empty">還沒有加入任何商品<br><span style="font-size:11px;opacity:0.6;">計算完單件後按「加入購物車」</span></div>'; return; }
+  var groups = {};
+  cart.forEach(function(item) {
+    if (!groups[item.shippingMode]) groups[item.shippingMode] = [];
+    groups[item.shippingMode].push(item);
+  });
+  var html = '';
+  Object.keys(groups).forEach(function(mode) {
+    var items = groups[mode];
+    html += '<div class="group-header">' + SHIP_NAMES[mode] + ' 包裹（' + items.length + '件）</div>';
+    items.forEach(function(item) {
+      html += '<div class="cart-item" id="ci-' + item.id + '">' +
+        '<div class="ci-header"><div class="ci-name">' + item.name + '</div>' +
+        '<button class="ci-del" onclick="removeFromCart(' + item.id + ')">✕</button></div>' +
+        '<div class="ci-meta">' +
+          '<span class="ci-tag">' + fmtJPY(item.jpy) + '</span>' +
+          '<span class="ci-tag">' + item.weight + 'g</span>' +
+          '<span class="ci-tag green">' + SHIP_NAMES[item.shippingMode] + '</span>' +
+        '</div>' +
+        '<div class="ci-row"><span class="k">單件成本</span><span class="v">' + fmt(item.cost) + '</span></div>' +
+        '<div class="ci-row hi"><span class="k">你設定的售價</span><span class="v">' + fmt(item.suggestedPrice) + '</span></div>' +
+        '<div class="custom-price-row"><label>最終售價（自訂）</label>' +
+          '<div class="custom-price-wrap">' +
+            '<div class="ip"><span>NT$</span><input type="number" id="cprice-' + item.id + '" value="' + Math.round(item.suggestedPrice) + '"></div>' +
+            '<span class="use-suggested" onclick="document.getElementById(\'cprice-' + item.id + '\').value=' + Math.round(item.suggestedPrice) + '">用建議價</span>' +
+          '</div></div>' +
+      '</div>';
+    });
+  });
+  body.innerHTML = html;
+}
+
+// ── Cart tax ──────────────────────────────────────────
+function setCartTaxMode(mode, btn) {
+  cartTaxFree = mode === 'free';
+  var btns = document.querySelectorAll('.cart-tax-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
   btn.classList.add('active');
 }
 
 // ── Settle ────────────────────────────────────────────
-function settle(){
-  if(cart.length===0){alert('購物車是空的');return;}
-
-  // Group by shipping mode
-  const groups={};
-  for(const item of cart){
-    if(!groups[item.shippingMode])groups[item.shippingMode]=[];
+function settle() {
+  if (cart.length === 0) { alert('購物車是空的'); return; }
+  var EXEMPT = 2000;
+  var groups = {};
+  cart.forEach(function(item) {
+    if (!groups[item.shippingMode]) groups[item.shippingMode] = [];
     groups[item.shippingMode].push(item);
-  }
+  });
 
-  // Per group: recalculate shipping by weight, split tax if over threshold
-  const EXEMPT=2000;
-  let html='';
-  let grandTotalCost=0,grandTotalCustom=0,grandTotalProfit=0;
+  var html = '';
+  var grandCost = 0, grandCustom = 0, grandProfit = 0;
 
-  for(const[mode,items]of Object.entries(groups)){
-    const totalW=items.reduce((s,x)=>s+x.weight,0)||1;
-    const groupShipping=mode==='custom'
-      ?(parseFloat(items[0]?.customShipping)||parseFloat(document.getElementById('customShipping')?.value)||0)
-      :calcShipping(totalW,mode);
+  Object.keys(groups).forEach(function(mode) {
+    var items = groups[mode];
+    var totalW = items.reduce(function(s, x) { return s + x.weight; }, 0) || 1;
+    var groupShipping = mode === 'custom'
+      ? (parseFloat(document.getElementById('customShipping').value) || 0)
+      : calcShipping(totalW, mode);
+    var totalTWD = items.reduce(function(s, x) { return s + x.twd; }, 0);
+    var dutiableValue = totalTWD + groupShipping;
 
-    // Packaging: use average of items' packaging (they each had their own estimate)
-    const groupPackaging=items.reduce((s,x)=>s+x.packaging,0)/items.length;
+    var taxPerItem = {};
+    var taxHtml = '';
+    var catTaxMap = { cosmetics: 0, misc: 0, book: 0, fashion: 0.05, electronics: 0.10, toy: 0.10, food: 0.20 };
 
-    // Per item: recalc cost with new shipping share (by weight ratio)
-    const itemsWithCost=items.map(item=>{
-      const wRatio=item.weight/totalW;
-      const shippingShare=groupShipping*wRatio;
-      const packagingShare=groupPackaging; // each item's own packaging
-      const baseCost=item.twd+shippingShare+packagingShare+(item.serviceFee||0)+(item.misc||0);
-      return{...item,shippingShare,baseCost};
-    });
+    if (!cartTaxFree && dutiableValue > EXEMPT) {
+      var totalDuty = 0, totalVat = 0;
+      items.forEach(function(item) {
+        var rate = catTaxMap[item.type] || 0.05;
+        var duty = item.twd * rate;
+        var vat = (item.twd + duty) * 0.05;
+        taxPerItem[item.id] = { duty: duty, vat: vat, rate: rate };
+        totalDuty += duty;
+        totalVat += vat;
+      });
+      taxHtml = '<div style="font-size:10px;color:rgba(232,160,32,0.7);margin-bottom:8px;padding:6px 8px;background:rgba(232,160,32,0.08);border-radius:6px;">⚠️ 完稅價格 ' + fmt(dutiableValue) + '（商品 ' + fmt(totalTWD) + ' ＋ 運費 ' + fmt(groupShipping) + '），超過 NT$2,000，關稅＋營業稅共 ' + fmt(totalDuty + totalVat) + '</div>';
+    } else if (!cartTaxFree) {
+      taxHtml = '<div style="font-size:10px;color:rgba(42,122,75,0.8);margin-bottom:8px;padding:6px 8px;background:rgba(42,122,75,0.08);border-radius:6px;">✓ 完稅價格 ' + fmt(dutiableValue) + '（商品 ' + fmt(totalTWD) + ' ＋ 運費 ' + fmt(groupShipping) + '），未達 NT$2,000，不課關稅</div>';
+    }
 
-    // Tax: if not free mode, check total twd of group
-    let taxHtml='';
-    let extraTaxPerItem={};
-    if(!cartTaxFree){
-      const totalTWD=itemsWithCost.reduce((s,x)=>s+x.twd,0);
-      // 完稅價格 = 商品總價 + 國際運費（台灣海關標準）
-      const dutiableValue=totalTWD+groupShipping;
-      if(dutiableValue>EXEMPT){
-        const catTaxMap={cosmetics:0,misc:0,book:0,fashion:0.05,electronics:0.10,toy:0.10,food:0.20};
-        let totalDuty=0, totalVat=0;
-        for(const item of itemsWithCost){
-          const rate=catTaxMap[item.type]||0.05;
-          const duty=item.twd*rate;
-          const vat=(item.twd+duty)*0.05;
-          extraTaxPerItem[item.id]={duty,vat,rate};
-          totalDuty+=duty;
-          totalVat+=vat;
-        }
-        taxHtml=`<div style="font-size:10px;color:rgba(232,160,32,0.7);margin-bottom:8px;padding:6px 8px;background:rgba(232,160,32,0.08);border-radius:6px;">⚠️ 完稅價格 ${fmt(dutiableValue)}（商品 ${fmt(totalTWD)} ＋ 運費 ${fmt(groupShipping)}），超過 NT$2,000，關稅＋營業稅共 ${fmt(totalDuty+totalVat)}</div>`;
-      }else{
-        taxHtml=`<div style="font-size:10px;color:rgba(42,122,75,0.8);margin-bottom:8px;padding:6px 8px;background:rgba(42,122,75,0.08);border-radius:6px;">✓ 完稅價格 ${fmt(dutiableValue)}（商品 ${fmt(totalTWD)} ＋ 運費 ${fmt(groupShipping)}），未達 NT$2,000 免稅門檻，不課關稅</div>`;
+    html += '<div class="sr-group"><div class="sr-gtitle">' + SHIP_NAMES[mode] + ' 包裹｜總重 ' + totalW + 'g｜運費 ' + fmt(groupShipping) + '</div>' + taxHtml;
+
+    items.forEach(function(item) {
+      var tax = taxPerItem[item.id] || { duty: 0, vat: 0, rate: 0 };
+      var wRatio = item.weight / totalW;
+      var shippingShare = groupShipping * wRatio;
+      var baseCost = item.twd + shippingShare + item.packaging + (item.serviceFee || 0) + (item.misc || 0);
+      var finalCost = baseCost + tax.duty + tax.vat;
+      var customPrice = parseFloat(document.getElementById('cprice-' + item.id) && document.getElementById('cprice-' + item.id).value) || item.suggestedPrice;
+      var profit = customPrice - finalCost;
+      var costDiff = item.cost - finalCost;
+
+      grandCost += finalCost;
+      grandCustom += customPrice;
+      grandProfit += profit;
+
+      var diffHint = '';
+      if (costDiff > 5) {
+        diffHint = '<span class="cost-diff" style="background:rgba(42,122,75,0.15);color:#4ade80;">合包省了 ' + fmt(costDiff) + '，實際賺 ' + fmt(profit) + '（比原估多 ' + fmt(profit - (item.suggestedPrice - item.cost)) + '）</span>';
+      } else if (costDiff < -5) {
+        diffHint = '<span class="cost-diff" style="background:rgba(200,75,47,0.15);color:#f87171;">⚠️ 合包後成本增加 ' + fmt(-costDiff) + '（課稅），實際賺 ' + fmt(profit) + '</span>';
       }
-    }
 
-    html+=`<div class="sr-group">
-      <div class="sr-gtitle">${SHIP_NAMES[mode]} 包裹｜總重 ${totalW}g｜運費 ${fmt(groupShipping)}
-      </div>${taxHtml}`;
+      var taxText = tax.duty > 0 ? '<span style="font-size:10px;color:rgba(232,160,32,0.7);">關稅 ' + fmt(tax.duty) + '（' + Math.round(tax.rate * 100) + '%）＋ 營業稅 ' + fmt(tax.vat) + '</span><br>' : '';
 
-    for(const item of itemsWithCost){
-      const tax=extraTaxPerItem[item.id]||{duty:0,vat:0};
-      const taxTotal=tax.duty+tax.vat;
-      // finalCost = 合包後成本（含稅）
-      const finalCost=item.baseCost+taxTotal;
-      const customPrice=parseFloat(document.getElementById('cprice-'+item.id)?.value)||item.suggestedPrice;
-      // 實際利潤 = 售價 - 合包後總成本（含關稅營業稅）
-      const profit=customPrice-finalCost;
-      const costDiff=item.cost-finalCost; // positive = cost went down after bundling
-      const profitVsOriginal=profit-(item.suggestedPrice-item.cost);
-      grandTotalCost+=finalCost;
-      grandTotalCustom+=customPrice;
-      grandTotalProfit+=profit;
-
-      let diffHint='';
-      if(costDiff>5){
-        diffHint=`<span class="cost-diff saved">合包省了 ${fmt(costDiff)}，實際賺 ${fmt(profit)}（比原估多 ${fmt(profitVsOriginal)}）</span>`;
-      }else if(costDiff<-5){
-        diffHint=`<span class="cost-diff" style="background:rgba(200,75,47,0.15);color:#f87171;">⚠️ 合包後成本增加 ${fmt(-costDiff)}（課稅），實際賺 ${fmt(profit)}</span>`;
-      }
-      const taxHintText=tax.duty>0
-        ?`關稅 ${fmt(tax.duty)}（${((tax.rate||0)*100).toFixed(0)}%）＋ 營業稅 ${fmt(tax.vat)}`
-        :'';
-
-      html+=`<div class="sr-item">
-        <div class="sr-item-name">
-          ${item.name}<br>
-          <span style="font-size:10px;opacity:0.5;">運費分攤 ${fmt(item.shippingShare)}（${Math.round(item.weight/totalW*100)}%）</span><br>
-          ${taxHintText?`<span style="font-size:10px;color:rgba(232,160,32,0.7);">${taxHintText}</span><br>`:''}
-          ${diffHint}
-        </div>
-        <div class="sr-item-prices">
-          <div class="sr-cost">成本 ${fmt(finalCost)}</div>
-          <div class="sr-suggested">你設定售價</div>
-          <div class="sr-custom">${fmt(customPrice)}</div>
-          <div style="font-size:10px;color:${profit>=0?'#4ade80':'#f87171'};">賺 ${fmt(profit)}${taxTotal>0?' (已含關稅)":''}</div>
-        </div>
-      </div>`;
-    }
-    html+='</div>';
-  }
-
-  // Summary
-  html+=`<div class="sr-summary">
-    <div class="sr-row"><span class="k">總成本</span><span class="v">${fmt(grandTotalCost)}</span></div>
-    <div class="sr-row"><span class="k">收款合計</span><span class="v">${fmt(grandTotalCustom)}</span></div>
-    <div class="sr-row profit"><span class="k">預估總利潤</span><span class="v">${fmt(grandTotalProfit)}</span></div>
-  </div>`;
-
-  const sr=document.getElementById('settleResult');
-  sr.innerHTML=html;sr.classList.remove('show');void sr.offsetWidth;sr.classList.add('show');
-  document.getElementById('resetSettleBtn').style.display='block';
-  document.getElementById('clearCartBtn').style.display='block';
-}
-
-// ── AI ────────────────────────────────────────────────
-async function runAI(){
-  const r=window._calcResult;if(!r)return;
-  const btn=document.getElementById('aiBtn');
-  btn.disabled=true;btn.textContent='分析中…';
-  document.getElementById('aiLoading').style.display='flex';
-  document.getElementById('aiOutput').innerHTML='';
-  document.getElementById('aiResult').classList.add('show');
-
-  const seasonText=document.querySelector('.season-badge')?.textContent||'';
-  const fetchDesc=window._fetchedInfo?.description||'';
-  const fabricInfo=window._fetchedInfo?.fabric||'';
-  const prompt=`你是台灣蝦皮、露天代購市場行情專家，專精日本→台灣代購。
-
-商品資訊（名稱可能為日文，請先辨識再分析）：
-- 名稱：${r.name||'（未填）'}
-- 商品描述：${fetchDesc||'（無）'}
-- 素材：${fabricInfo||'（未知）'}
-- 季節：${seasonText||'（未標示）'}
-- 日本含稅價：${fmtJPY(r.jpy)}（換算 ${fmt(r.twd)}）
-- 代購總成本：${fmt(r.cost)}
-- 建議售價：${fmt(r.suggestedPrice)}（加價 ${parseFloat(r.pct).toFixed(0)}%，賺 ${fmt(r.profit)}）
-
-請依序回答（繁體中文，語氣直接）：
-
-【商品確認】先把日文名稱翻成中文，一句話說這是什麼商品。
-【蝦皮/露天行情】同款或同類代購目前在台灣賣多少？給低～高區間，說明差異原因。
-【季節備貨建議】這是${seasonText||'什麼季節'}商品，現在時機適不適合備貨？
-【定價評估】我的售價 ${fmt(r.suggestedPrice)} 在市場上算貴、合理、還是偏低？
-【代購上限價】最多能賣多少，超過買家就不買了。`;
-
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,messages:[{role:'user',content:prompt}]})});
-    const data=await res.json();
-    const text=data.content?.find(b=>b.type==='text')?.text||'分析失敗';
-    document.getElementById('aiLoading').style.display='none';
-    document.getElementById('aiOutput').innerHTML=`<div class="ai-output">${text.replace(/</g,'&lt;').replace(/【(.*?)】/g,'<strong style="color:var(--ink);display:block;margin-top:12px;margin-bottom:4px;">【$1】</strong>')}</div>`;
-  }catch(e){
-    document.getElementById('aiLoading').style.display='none';
-    document.getElementById('aiOutput').innerHTML='<div style="color:var(--accent);font-size:13px;">分析失敗，請確認網路後重試。</div>';
-  }
-  btn.disabled=false;btn.textContent='🔍 重新分析';
-}
-
-
-// ── Season detection ──────────────────────────────────
-function detectSeason(text){
-  const t=text||'';
-  if(/春夏|SS|spring.*summer/i.test(t))return{label:'春夏',cls:'season-spring',icon:'🌸'};
-  if(/秋冬|AW|FW|fall.*winter|autumn/i.test(t))return{label:'秋冬',cls:'season-fall',icon:'🍂'};
-  if(/夏|summer|涼感|UV|半袖|ノースリーブ|リネン|麻|シフォン/i.test(t))return{label:'夏季',cls:'season-summer',icon:'☀️'};
-  if(/冬|winter|ウール|wool|ニット|knit|裏起毛|ダウン|コート/i.test(t))return{label:'冬季',cls:'season-winter',icon:'❄️'};
-  if(/春|spring|花柄|floral/i.test(t))return{label:'春季',cls:'season-spring',icon:'🌸'};
-  if(/秋|fall|autumn|チェック|コーデュロイ/i.test(t))return{label:'秋季',cls:'season-fall',icon:'🍂'};
-  return null;
-}
-function showSeasonBadge(text){
-  const s=detectSeason(text||'');
-  const el=document.getElementById('seasonBadge');
-  el.innerHTML=s?`<div class="season-badge ${s.cls}">${s.icon} ${s.label}商品</div>`:'';
-}
-
-// ── Season detection ──────────────────────────────────
-function detectSeason(text){
-  const t=text||'';
-  if(/春夏|SS|spring.*summer/i.test(t))return{label:'春夏',cls:'season-spring',icon:'🌸'};
-  if(/秋冬|AW|FW|fall.*winter|autumn/i.test(t))return{label:'秋冬',cls:'season-fall',icon:'🍂'};
-  if(/夏|summer|涼感|UV|半袖|ノースリーブ|リネン|麻|シフォン/i.test(t))return{label:'夏季',cls:'season-summer',icon:'☀️'};
-  if(/冬|winter|ウール|wool|ニット|knit|裏起毛|ダウン|コート/i.test(t))return{label:'冬季',cls:'season-winter',icon:'❄️'};
-  if(/春|spring|花柄|floral/i.test(t))return{label:'春季',cls:'season-spring',icon:'🌸'};
-  if(/秋|fall|autumn|チェック|コーデュロイ/i.test(t))return{label:'秋季',cls:'season-fall',icon:'🍂'};
-  return null;
-}
-function showSeasonBadge(text){
-  const s=detectSeason(text||'');
-  const el=document.getElementById('seasonBadge');
-  el.innerHTML=s?`<div class="season-badge ${s.cls}">${s.icon} ${s.label}商品</div>`:'';
-}
-
-// ── URL Fetch ─────────────────────────────────────────
-async function fetchProduct(){
-  const url=document.getElementById('productUrl').value.trim();
-  if(!url){alert('請先貼入商品網址');return;}
-  const btn=document.getElementById('fetchBtn');
-  const status=document.getElementById('fetchStatus');
-  btn.disabled=true;
-  status.className='fetch-status loading';
-  status.innerHTML='<div class="dot"></div><div class="dot"></div><div class="dot"></div><span>正在讀取商品頁面…</span>';
-  status.style.display='flex';
-  try{
-    const extractPrompt=`請讀取這個日本購物網站的商品頁面並提取資訊：${url}
-
-請從頁面內容中找出以下資訊，以 JSON 格式回覆（找不到的欄位填 null）：
-{
-  "name": "商品日文名稱",
-  "price_jpy": 數字（日幣含稅價，只填數字不含符號）,
-  "weight_g": 數字或null（商品重量克數，如頁面有標示）,
-  "fabric": "素材描述（如ポリエステル100%等，找不到填null）",
-  "season": "季節關鍵字（如春夏、秋冬等，找不到填null）",
-  "category": "fashion|cosmetics|food|electronics|toy|misc|book 其中之一",
-  "description": "一句話中文描述這是什麼商品"
-}
-只回覆 JSON，不要其他文字。`;
-
-    const response=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',max_tokens:800,
-        tools:[{type:'web_search_20250305',name:'web_search'}],
-        messages:[{role:'user',content:extractPrompt}]
-      })
+      html += '<div class="sr-item">' +
+        '<div class="sr-item-name">' + item.name + '<br>' +
+          '<span style="font-size:10px;opacity:0.5;">運費分攤 ' + fmt(shippingShare) + '（' + Math.round(wRatio * 100) + '%）</span><br>' +
+          taxText + diffHint +
+        '</div>' +
+        '<div class="sr-item-prices">' +
+          '<div class="sr-cost">成本 ' + fmt(finalCost) + '</div>' +
+          '<div class="sr-suggested">你設定售價</div>' +
+          '<div class="sr-custom">' + fmt(customPrice) + '</div>' +
+          '<div style="font-size:10px;color:' + (profit >= 0 ? '#4ade80' : '#f87171') + ';">賺 ' + fmt(profit) + '</div>' +
+        '</div>' +
+      '</div>';
     });
-    const data=await response.json();
-    const textBlock=data.content?.find(b=>b.type==='text');
-    const rawText=textBlock?.text||'';
-    let info=null;
-    try{const m=rawText.match(/\{[\s\S]*\}/);if(m)info=JSON.parse(m[0]);}catch(e){}
+    html += '</div>';
+  });
 
-    if(!info){
-      status.className='fetch-status error';
-      status.innerHTML='⚠️ 無法解析商品資訊，請手動填入，或確認網址是否正確。';
-      btn.disabled=false;return;
-    }
-    const filled=[];
-    if(info.name){document.getElementById('productName').value=info.name;filled.push('商品名稱');}
-    if(info.price_jpy){
-      document.getElementById('priceJPY').value=info.price_jpy;
-      document.getElementById('priceWrap').classList.add('auto');
-      filled.push('¥'+info.price_jpy);
-      updateTWD();
-    }
-    if(info.category){
-      const catMap={fashion:'5|fashion',cosmetics:'0|cosmetics',food:'20|food',electronics:'10|electronics',toy:'10|toy',misc:'0|misc',book:'0|book'};
-      document.getElementById('category').value=catMap[info.category]||'5|fashion';
-    }
-    // Season
-    const seasonText=(info.season||'')+(info.name||'')+(info.fabric||'');
-    showSeasonBadge(seasonText);
-    // Weight
-    weightManual=false;packagingManual=false;
-    if(info.weight_g){
-      document.getElementById('weight').value=info.weight_g;
-      document.getElementById('weightWrap').classList.add('auto');
-      const h=document.getElementById('weightHint');h.textContent=`頁面標示 ${info.weight_g}g`;h.style.display='block';
-      filled.push(`重量${info.weight_g}g`);
-      const{cost,d}=estimatePackaging(info.weight_g);
-      document.getElementById('packaging').value=cost;
-      document.getElementById('packagingWrap').classList.add('auto');
-      const ph=document.getElementById('packagingHint');ph.textContent=d;ph.style.display='block';
-    }else{
-      autoEstimate();
-    }
-    if(info.fabric)filled.push('素材');
-    window._fetchedInfo=info;
+  html += '<div class="sr-summary">' +
+    '<div class="sr-row"><span class="k">總成本</span><span class="v">' + fmt(grandCost) + '</span></div>' +
+    '<div class="sr-row"><span class="k">收款合計</span><span class="v">' + fmt(grandCustom) + '</span></div>' +
+    '<div class="sr-row profit"><span class="k">預估總利潤</span><span class="v">' + fmt(grandProfit) + '</span></div>' +
+  '</div>';
 
-    status.className='fetch-status success';
-    status.innerHTML=`✓ 已自動填入：${filled.map(f=>`<span class="filled-tag">${f}</span>`).join('')}${info.description?`<div style="margin-top:6px;color:var(--ink3);">${info.description}</div>`:''}`;
-    btn.disabled=false;
-  }catch(e){
-    status.className='fetch-status error';
-    status.innerHTML='⚠️ 讀取失敗，請確認網路連線後重試，或手動填入商品資料。';
-    btn.disabled=false;
-  }
+  var sr = document.getElementById('settleResult');
+  sr.innerHTML = html;
+  sr.classList.remove('show');
+  void sr.offsetWidth;
+  sr.classList.add('show');
+  document.getElementById('resetSettleBtn').style.display = 'block';
+  document.getElementById('clearCartBtn').style.display = 'block';
 }
 
-
-// ── Reset / clear cart ────────────────────────────────
-function resetSettle(){
-  document.getElementById('settleResult').classList.remove('show');
-  document.getElementById('settleResult').innerHTML='';
-  document.getElementById('resetSettleBtn').style.display='none';
-  document.getElementById('clearCartBtn').style.display='none';
+function resetSettle() {
+  var sr = document.getElementById('settleResult');
+  sr.classList.remove('show');
+  sr.innerHTML = '';
+  document.getElementById('resetSettleBtn').style.display = 'none';
+  document.getElementById('clearCartBtn').style.display = 'none';
 }
-function clearCart(){
-  if(!confirm('確定要清空購物車嗎？'))return;
-  cart=[];
+
+function clearCart() {
+  if (!confirm('確定要清空購物車嗎？')) return;
+  cart = [];
   renderCart();
   updateCartBadge();
   resetSettle();
 }
 
+// ── Search ────────────────────────────────────────────
+function openSearch(platform) {
+  var r = window._calcResult;
+  var name = (r && r.name) ? r.name : document.getElementById('productName').value || '';
+  var query = encodeURIComponent(name + ' 代購');
+  var url = platform === 'shopee'
+    ? 'https://shopee.tw/search?keyword=' + query
+    : 'https://find.ruten.com.tw/s/index.html#' + encodeURIComponent(name + ' 日本代購');
+  window.open(url, '_blank');
+}
 
-// ── Search links ──────────────────────────────────────
-function openSearch(platform){
-  const r=window._calcResult;
-  const name=r?.name||document.getElementById('productName').value||'';
-  // Build search query: use product name, strip special chars
-  const query=encodeURIComponent((name+' 代購').trim());
-  let url='';
-  if(platform==='shopee'){
-    url=`https://shopee.tw/search?keyword=${query}`;
-  }else{
-    url=`https://find.ruten.com.tw/s/index.html#${encodeURIComponent(name+' 日本代購')}`;
+// ── AI Analysis ───────────────────────────────────────
+async function runAI() {
+  var r = window._calcResult;
+  if (!r) return;
+  var btn = document.getElementById('aiBtn');
+  btn.disabled = true;
+  btn.textContent = '分析中…';
+  document.getElementById('aiLoading').style.display = 'flex';
+  document.getElementById('aiOutput').innerHTML = '';
+  document.getElementById('aiResult').classList.add('show');
+
+  var seasonText = document.querySelector('.season-badge') ? document.querySelector('.season-badge').textContent : '';
+  var prompt = '你是台灣蝦皮、露天代購市場行情專家，專精日本→台灣代購。\n\n' +
+    '商品資訊（名稱可能為日文，請先辨識再分析）：\n' +
+    '- 名稱：' + (r.name || '（未填）') + '\n' +
+    '- 季節：' + (seasonText || '（未標示）') + '\n' +
+    '- 日本含稅價：' + fmtJPY(r.jpy) + '（換算 ' + fmt(r.twd) + '）\n' +
+    '- 代購總成本：' + fmt(r.cost) + '\n' +
+    '- 建議售價：' + fmt(r.suggestedPrice) + '（加價 ' + parseFloat(r.pct).toFixed(0) + '%，賺 ' + fmt(r.profit) + '）\n\n' +
+    '請依序回答（繁體中文，語氣直接）：\n\n' +
+    '【商品確認】先把日文名稱翻成中文，一句話說這是什麼商品。\n' +
+    '【蝦皮/露天行情】同款或同類代購目前在台灣賣多少？給低～高區間。\n' +
+    '【季節備貨建議】這是' + (seasonText || '什麼季節') + '商品，現在時機適不適合備貨？\n' +
+    '【定價評估】我的售價 ' + fmt(r.suggestedPrice) + ' 在市場上算貴、合理、還是偏低？\n' +
+    '【代購上限價】最多能賣多少，超過買家就不買了。';
+
+  try {
+    var response = await fetch('/api/claude', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 800,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    var data = await response.json();
+    var text = '';
+    if (data.content) {
+      for (var i = 0; i < data.content.length; i++) {
+        if (data.content[i].type === 'text') text += data.content[i].text;
+      }
+    }
+    if (!text) text = '分析失敗，請稍後再試。';
+    document.getElementById('aiLoading').style.display = 'none';
+    document.getElementById('aiOutput').innerHTML = '<div class="ai-output">' +
+      text.replace(/</g, '&lt;').replace(/【(.*?)】/g, '<strong style="color:var(--ink);display:block;margin-top:12px;margin-bottom:4px;">【$1】</strong>') +
+      '</div>';
+  } catch (e) {
+    document.getElementById('aiLoading').style.display = 'none';
+    document.getElementById('aiOutput').innerHTML = '<div style="color:var(--accent);font-size:13px;">分析失敗，請確認網路後重試。</div>';
   }
-  window.open(url,'_blank');
-  return false;
+  btn.disabled = false;
+  btn.textContent = '🔍 AI 分析蝦皮/露天行情';
+}
+
+// ── Product analysis ─────────────────────────────────
+function showAnalyzeBtn() {
+  var name = document.getElementById('productName').value.trim();
+  document.getElementById('analyzeBtn').style.display = name.length > 2 ? 'block' : 'none';
+}
+
+async function analyzeProduct() {
+  var name = document.getElementById('productName').value.trim();
+  if (!name) return;
+  var btn = document.getElementById('analyzeBtn');
+  var result = document.getElementById('analyzeResult');
+  btn.disabled = true;
+  btn.textContent = '分析中…';
+  result.style.display = 'none';
+
+  var prompt = '你是日本商品專家。根據以下商品名稱和材質資訊，以 JSON 格式回覆，不要其他文字：
+
+' +
+    '商品：' + name + '
+
+' +
+    '{
+' +
+    '  "name_zh": "中文商品名稱",
+' +
+    '  "category": "fashion|cosmetics|food|electronics|toy|misc|book 其中之一",
+' +
+    '  "weight_g": 數字（根據材質和商品類型估算克數）,
+' +
+    '  "season": "春夏|秋冬|夏季|冬季|春季|秋季|null",
+' +
+    '  "reason": "一句話說明重量估算依據"
+' +
+    '}';
+
+  try {
+    var response = await fetch('/api/claude', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 300,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    var data = await response.json();
+    var text = '';
+    if (data.content) {
+      for (var i = 0; i < data.content.length; i++) {
+        if (data.content[i].type === 'text') text += data.content[i].text;
+      }
+    }
+    var info = null;
+    try {
+      var match = text.match(/\{[\s\S]*\}/);
+      if (match) info = JSON.parse(match[0]);
+    } catch(e) {}
+
+    if (!info) throw new Error('解析失敗');
+
+    // Fill in fields
+    var filled = [];
+    if (info.name_zh) {
+      document.getElementById('productName').value = info.name_zh + '（' + name.substring(0, 20) + '）';
+      showSeasonBadge(info.name_zh);
+      filled.push('中文名：' + info.name_zh);
+    }
+    if (info.category) {
+      var catMap = {
+        fashion: '5|fashion', cosmetics: '0|cosmetics', food: '20|food',
+        electronics: '10|electronics', toy: '10|toy', misc: '0|misc', book: '0|book'
+      };
+      if (catMap[info.category]) {
+        document.getElementById('category').value = catMap[info.category];
+        onCategoryChange();
+      }
+    }
+    if (info.weight_g) {
+      weightManual = true;
+      document.getElementById('weight').value = info.weight_g;
+      document.getElementById('weightWrap').classList.remove('auto');
+      var h = document.getElementById('weightHint');
+      h.textContent = info.reason || ('AI 估算 ' + info.weight_g + 'g');
+      h.style.display = 'block';
+      h.style.color = 'var(--blue)';
+      filled.push('重量：' + info.weight_g + 'g');
+      // update packaging
+      var pkg = estimatePackaging(info.weight_g);
+      document.getElementById('packaging').value = pkg.cost;
+      document.getElementById('packagingWrap').classList.add('auto');
+      var ph = document.getElementById('packagingHint');
+      ph.textContent = pkg.d; ph.style.display = 'block';
+    }
+    if (info.season && info.season !== 'null') {
+      var seasonMap = {
+        '春夏': { cls: 'season-spring', icon: '🌸' },
+        '秋冬': { cls: 'season-fall', icon: '🍂' },
+        '夏季': { cls: 'season-summer', icon: '☀️' },
+        '冬季': { cls: 'season-winter', icon: '❄️' },
+        '春季': { cls: 'season-spring', icon: '🌸' },
+        '秋季': { cls: 'season-fall', icon: '🍂' }
+      };
+      var s = seasonMap[info.season];
+      if (s) {
+        document.getElementById('seasonBadge').innerHTML = '<div class="season-badge ' + s.cls + '">' + s.icon + ' ' + info.season + '商品</div>';
+      }
+      filled.push('季節：' + info.season);
+    }
+    result.textContent = '✓ 已填入：' + filled.join('　');
+    result.style.display = 'block';
+    updateTWD();
+  } catch(e) {
+    result.textContent = '分析失敗，請手動填入商品資訊。';
+    result.style.display = 'block';
+    result.style.color = 'var(--accent)';
+  }
+  btn.disabled = false;
+  btn.textContent = '🔍 重新分析';
 }
 
 // ── Init ──────────────────────────────────────────────
